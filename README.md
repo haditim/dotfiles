@@ -1,8 +1,16 @@
 # dot files
 These are my public dot files including following:
 
-- ideavimrc
+## ideavimrc
 For the times that something happens to my Doom Emacs and an alternative is needed, I made an `Intellij Idea` config as close as possible to my Doom Emacs in terms of keybindings etc.
+
+### required plugins
+These are personal preferences and don't necessarily need to be installed
+- IdeaVim-EasyMotion and AceJump
+- GruvBox Theme
+- Python Community Edition
+- Cursive
+- Rainbow Brackets
 
 # how to use
 I user something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
