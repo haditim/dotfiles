@@ -5,7 +5,7 @@ These are my public dot files including following:
 For the times that something happens to my Doom Emacs and an alternative is needed, I made an `Intellij Idea` config as close as possible to my Doom Emacs in terms of keybindings etc.
 
 # how to use
-I user something like the following to track my changes on dot files (mostly taken from [https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b](this) page).
+I user something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
 
 ## new setup 
 
