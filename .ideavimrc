@@ -1,0 +1,76 @@
+" plugins
+set clipboard+=unnamed
+set clipboard+=ideaput
+set ignorecase
+set NERDTree
+set smartcase
+set wrapscan                      " searches wrap around the end of the file
+set history=10000                 " keep x lines of command line history
+set commentary                    " commenting
+set easymotion
+set surround
+set multiple-cursors
+set highlightedyank
+
+" idea settings
+set ideastatusicon=gray
+
+" cie equals to ggVGc
+set textobj-entire
+set ReplaceWithRegister
+
+" map leader to space
+let mapleader=" "
+
+" plugin settings
+let g:argtextobj_pairs="[:],(:),<:>"
+
+" key maps
+map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>cr <Action>(RenameElement)
+map <leader>fs <Action>(SaveDocument)
+
+" Window jumps based on DOOM
+nnoremap <leader>wl <c-w>l
+nnoremap <leader>wj <c-w>j
+nnoremap <leader>wh <c-w>h
+nnoremap <leader>wk <c-w>k
+nnoremap <leader>wv <c-w>v
+nnoremap <leader>ws <c-w>s
+
+" tab selection
+map <c-j> gT
+map <c-k> gt
+
+nnoremap <leader><leader> :action GotoFile<cr>
+
+" some extra movements
+inoremap <c-e> <end>
+inoremap <c-a> <home>
+nnoremap L $
+nnoremap H ^
+inoremap <c-h> <left>
+inoremap <c-l> <right>
+inoremap <c-k> <up>
+inoremap <c-j> <down>
+
+" alt-x and leader-? do ctrl+shift+a
+nmap <leader>? :action GotoAction<CR>
+nmap <A-x> :action GotoAction<CR>
+
+" code navigation using ctrl-o and ctrl-i
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+
+
+" make Y yank till end of line
+map Y y$
+" don't lose selection when indenting
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
+" misc
+nmap <leader>sp :action FindInPath<CR>
+nmap <leader>]e :action GotoNextError<CR>
+nmap <leader>[e :action GotoNextError<CR>
