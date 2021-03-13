@@ -12,6 +12,19 @@ These are personal preferences and don't necessarily need to be installed
 - Cursive
 - Rainbow Brackets
 
+## oh-my-zsh
+A better-looking and acting terminal. The color scheme works on "dark" terminal themes.
+
+### install required plugins by
+
+``` shell
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
+```
+
+`
+
 # how to use
 I user something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
 
