@@ -55,6 +55,9 @@ HIST_STAMPS="dd/mm/yyyy"
 DISABLE_UPDATE_PROMPT=true
 POWERLEVEL9K_MODE='awesome-fontconfig'
 
+# delete from caret to line start by ctrl+U
+bindkey \^U backward-kill-line
+
 source $ZSH/oh-my-zsh.sh
 
 alias dotfiles='/usr/bin/git --git-dir=/home/hadi/.dotfiles/ --work-tree=/home/hadi'
