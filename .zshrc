@@ -12,6 +12,7 @@ plugins=(
   pip
   python
   docker
+  docker-compose
   dotenv
 )
 
