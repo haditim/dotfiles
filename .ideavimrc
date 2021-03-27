@@ -34,11 +34,12 @@ map <S-e> :action RecentFiles<CR>
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>cr <Action>(RenameElement)
 map <leader>fs <Action>(SaveDocument)
-map <leader>f :action Find<CR>
+map <leader>ff :action Find<CR>
 map <leader>p :action ParameterInfo<CR>
 map <leader>q :action QuickJavaDoc<CR>
 map <leader>rr :action RefactoringMenu<CR>
-map <leader>t :action Vcs.UpdateProject<CR>
+map <leader>tt :action Vcs.UpdateProject<CR>
+map <leader>tg :action CodeGlance.toggle<CR>
 map <leader>o :action RecentLocations<CR>
 map <leader>si :action FileStructurePopup<CR>
 
@@ -49,10 +50,11 @@ nnoremap <leader>wh <c-w>h
 nnoremap <leader>wk <c-w>k
 nnoremap <leader>wv <c-w>v
 nnoremap <leader>ws <c-w>s
+nnoremap <leader>wd <c-w>c
 
-" tab selection
-map <c-j> gT
-map <c-l> gt
+" ab selection
+nmap <c-j> gT
+nmap <c-l> gt
 
 "nnoremap <leader><leader> :action GotoFile<cr>
 

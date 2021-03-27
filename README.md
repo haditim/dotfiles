@@ -13,7 +13,7 @@ These are personal preferences and don't necessarily need to be installed
 - Rainbow Brackets
 
 ### keymaps
-I like to use the IntelliJ Idea with IdeaVim enabled. However, what is very annoying, is that one cannot easily fix all the keybinding conflicts between IdeaVim and the IDE itself. There are several ways to avoid keystroke conflicts: modify ideavimrc to reflect key shortcut which do not overlap with IDE's and modifying keybindings of the IDE. The former is difficults since all of the actions are not known (e.g. I could not find Git Commit action to bind to any key) and the latter is very time consuming, one should also be able to know a minimum of default keybindings for the IDE in case one sits at a computer with no IdeaVim and settings available to them. To work around this issue, I wrote a small python code which goes through the default keybindings settings and adds a `first-keystroke` of your liking to it. Then for example if you want to use open recent files popup, you need to press ctrl-z + ctrl-e if you set the `FIRST_STROKE = 'ctrl z'` instead of default `ctrl-e` which conflicts with Vim's page down. To use the script, download the default keystrokes from [IntelliJ Community Edition source code](https://github.com/JetBrains/intellij-community/tree/282253b8ee888b51c0e8f63f44d9d4ecae9c19d2/platform/platform-resources/src/keymaps "keybindings from IntelliJ source code") (use `$default.xml`) and runt the following with variables changed:
+I like to use the IntelliJ Idea with IdeaVim enabled. However, what is very annoying, is that one cannot easily fix all the keybinding conflicts between IdeaVim and the IDE itself. There are several ways to avoid keystroke conflicts: modify ideavimrc to reflect key shortcut which do not overlap with IDE's and modifying keybindings of the IDE. The former is difficults since all of the actions are not known (e.g. I could not find Git Commit action to bind to any key) and the latter is very time consuming, one should also be able to know a minimum of default keybindings for the IDE in case one sits at a computer with no IdeaVim and settings available to them. To work around this issue, I wrote a small python code which goes through the default keybindings settings and adds a `first-keystroke` of your liking to it. Then for example if you want to use open recent files popup, you need to press ctrl-z + ctrl-e if you set the `FIRST_STROKE = 'ctrl z'` instead of default `ctrl-e` which conflicts with Vim's page down. To use the script, download the default keystrokes from [IntelliJ Community Edition source code](https://github.com/JetBrains/intellij-community/tree/282253b8ee888b51c0e8f63f44d9d4ecae9c19d2/platform/platform-resources/src/keymaps "keybindings from IntelliJ source code") (use `$default.xml`) and run the following with variables changed accordingly:
 
 ``` python
 #!/usr/bin/env python3
@@ -50,7 +50,8 @@ print(f'Successfully created file {TARGET_FILE_ADDRESS} created with'
 print('Put this file into "/home/<your_user>/.config/JetBrains/<product'
       '>/keymaps" folder and restart your IDE to see it in settings')
 ```
-Also, make sure that you clone this repo to have some more settings for IdeaVim, including keybindings (S: shift, c: ctrl, m: alt, `<leader>`(set in .ideavimrt): space):
+You can also copy the `IntelliJ_idea_keymaps_with_ctrl-z.xml` in this repo if ctrl-z for first-keystroke is fine for you. Also, make sure that you clone this repo to have some more settings for IdeaVim, including keybindings (S: shift, c: ctrl, m: alt, `<leader>`(set in .ideavimrt): space):
+
 
 | keystroke         | action                        |
 | ----------------- | ----------------------------  |
@@ -59,11 +60,13 @@ Also, make sure that you clone this repo to have some more settings for IdeaVim,
 | `<leader>`z       | Toggle Distraction Free Mode  |
 | `<leader>`cr      | Rename Element                |
 | `<leader>`fs      | Save Document                 |
-| `<leader>`f       | Find                          |
+| `<leader>`ff      | Find                          |
 | `<leader>`p       | Parameter Info                |
 | `<leader>`q       | Quick Doc                     |
 | `<leader>`rr      | RefactoringMenu               |
-| `<leader>`t       | Vcs.UpdateProject             |
+| `<leader>`tt      | Vcs.UpdateProject             |
+| `<leader>`tg      | Toggle CodeGlance             |
+| `<leader>`o       | Recent Locations              |
 | `<leader>`si      | FileStructurePopup            |
 | `<leader>`wl      | change windows using Vim keys |
 | `<leader>`wj      |                               |
@@ -71,13 +74,14 @@ Also, make sure that you clone this repo to have some more settings for IdeaVim,
 | `<leader>`wk      |                               |
 | `<leader>`wv      | split to right                |
 | `<leader>`wv      | split to left                 |
+| `<leader>`wd      | delete window                 |
 | c-j               | gT                            |
 | c-l               | gt                            |
 | m-x               | go to action (c-s-a)          |
 | c-o               | action back (c-m-left)        |
 | c-i               | action forward (c-m-right)    |
 
-which are mostly similar to those of Doom Emacs'
+which are mostly similar to those of Doom Emacs'. If you are able to mimic more Doom shortcuts, please issue a pull request.
 
 ## oh-my-zsh
 A better-looking and acting terminal. The color scheme works on "dark" terminal themes.
@@ -90,10 +94,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 ```
 
-`
 
 # how to use
-I user something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
+I use something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
 
 ## new setup 
 
