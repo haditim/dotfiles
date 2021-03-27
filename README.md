@@ -50,27 +50,27 @@ print(f'Successfully created file {TARGET_FILE_ADDRESS} created with'
 print('Put this file into "/home/<your_user>/.config/JetBrains/<product'
       '>/keymaps" folder and restart your IDE to see it in settings')
 ```
-Also, make sure that you clone this repo to have some more settings for IdeaVim, including keybindings (S: shift, c: ctrl, m: alt, <leader>(set in .ideavimrt): space):
+Also, make sure that you clone this repo to have some more settings for IdeaVim, including keybindings (S: shift, c: ctrl, m: alt, `<leader>`(set in .ideavimrt): space):
 
 | keystroke         | action                        |
 | ----------------- | ----------------------------  |
 | S-r (normal mode) | Replace                       |
 | S-e (normal mode) | Recent files                  |
-| <leader>z         | Toggle Distraction Free Mode  |
-| <leader>cr        | Rename Element                |
-| <leader>fs        | Save Document                 |
-| <leader>f         | Find                          |
-| <leader>p         | Parameter Info                |
-| <leader>q         | Quick Doc                     |
-| <leader>rr        | RefactoringMenu               |
-| <leader>t         | Vcs.UpdateProject             |
-| <leader>si        | FileStructurePopup            |
-| <leader>wl        | change windows using Vim keys |
-| <leader>wj        |                               |
-| <leader>wh        |                               |
-| <leader>wk        |                               |
-| <leader>wv        | split to right                |
-| <leader>wv        | split to left                 |
+| `<leader>`z       | Toggle Distraction Free Mode  |
+| `<leader>`cr      | Rename Element                |
+| `<leader>`fs      | Save Document                 |
+| `<leader>`f       | Find                          |
+| `<leader>`p       | Parameter Info                |
+| `<leader>`q       | Quick Doc                     |
+| `<leader>`rr      | RefactoringMenu               |
+| `<leader>`t       | Vcs.UpdateProject             |
+| `<leader>`si      | FileStructurePopup            |
+| `<leader>`wl      | change windows using Vim keys |
+| `<leader>`wj      |                               |
+| `<leader>`wh      |                               |
+| `<leader>`wk      |                               |
+| `<leader>`wv      | split to right                |
+| `<leader>`wv      | split to left                 |
 | c-j               | gT                            |
 | c-l               | gt                            |
 | m-x               | go to action (c-s-a)          |
