@@ -50,7 +50,7 @@ print(f'Successfully created file {TARGET_FILE_ADDRESS} created with'
 print('Put this file into "/home/<your_user>/.config/JetBrains/<product'
       '>/keymaps" folder and restart your IDE to see it in settings')
 ```
-Also, make sure that you clone this repo to have some more settings for IdeaVim, including keybindings:
+Also, make sure that you clone this repo to have some more settings for IdeaVim, including keybindings (S: shift, c: ctrl, m: alt, <leader>(set in .ideavimrt): space):
 
 | keystroke         | action                        |
 | ----------------- | ----------------------------  |
@@ -70,12 +70,12 @@ Also, make sure that you clone this repo to have some more settings for IdeaVim,
 | <leader>wh        |                               |
 | <leader>wk        |                               |
 | <leader>wv        | split to right                |
-| <leader>wv        | split to right                |
-| <c-j>             | gT                            |
-| <c-l>             | gt                            |
-| <m-x>             | go to action (c-s-a)          |
-| <c-o>             | action back (c-m-left)        |
-| <c-i>             | action forward (c-m-right)    |
+| <leader>wv        | split to left                 |
+| c-j               | gT                            |
+| c-l               | gt                            |
+| m-x               | go to action (c-s-a)          |
+| c-o               | action back (c-m-left)        |
+| c-i               | action forward (c-m-right)    |
 
 which are mostly similar to those of Doom Emacs'
 

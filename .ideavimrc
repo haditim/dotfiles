@@ -39,6 +39,7 @@ map <leader>p :action ParameterInfo<CR>
 map <leader>q :action QuickJavaDoc<CR>
 map <leader>rr :action RefactoringMenu<CR>
 map <leader>t :action Vcs.UpdateProject<CR>
+map <leader>o :action RecentLocations<CR>
 map <leader>si :action FileStructurePopup<CR>
 
 " Window jumps based on DOOM
