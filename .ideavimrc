@@ -11,26 +11,35 @@ set easymotion
 set surround
 set multiple-cursors
 set highlightedyank
-set expand-region
 set showmode
 
 " idea settings
 set ideastatusicon=gray
 
-" cie equals to ggVGc
+" cie equals to ggVGc (change in whole document)
 set textobj-entire
 set ReplaceWithRegister
 
 " map leader to space
-let mapleader=<space>
+let mapleader=" "
 
 " plugin settings
 let g:argtextobj_pairs="[:],(:),<:>"
 
-" key maps
+" key maps with shift replacement for ctrl in Idea
+map <S-r> :action Replace<cr>
+map <S-e> :action RecentFiles<CR>
+
+" key maps with leader replacement for ctrl in Idea
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>cr <Action>(RenameElement)
 map <leader>fs <Action>(SaveDocument)
+map <leader>f :action Find<CR>
+map <leader>p :action ParameterInfo<CR>
+map <leader>q :action QuickJavaDoc<CR>
+map <leader>rr :action RefactoringMenu<CR>
+map <leader>t :action Vcs.UpdateProject<CR>
+map <leader>si :action FileStructurePopup<CR>
 
 " Window jumps based on DOOM
 nnoremap <leader>wl <c-w>l
@@ -42,7 +51,7 @@ nnoremap <leader>ws <c-w>s
 
 " tab selection
 map <c-j> gT
-map <c-k> gt
+map <c-l> gt
 
 "nnoremap <leader><leader> :action GotoFile<cr>
 
@@ -56,43 +65,17 @@ inoremap <c-l> <right>
 inoremap <c-k> <up>
 inoremap <c-j> <down>
 
-" alt-x and leader-? do ctrl+shift+a
-nmap <leader>? :action GotoAction<CR>
+" alt-x ctrl+shift+a
 nmap <A-x> :action GotoAction<CR>
 
 " code navigation using ctrl-o and ctrl-i
 nnoremap <c-o> :action Back<cr>
 nnoremap <c-i> :action Forward<cr>
 
-
 " make Y yank till end of line
 map Y y$
+
 " don't lose selection when indenting
 vnoremap < <gv
 vnoremap > >gv
 vnoremap = =gv
-
-" misc
-nmap <leader>sp :action FindInPath<CR>
-nmap <leader>]e :action GotoNextError<CR>
-nmap <leader>[e :action GotoNextError<CR>
-
-" new
-map <leader>r <Action>(Replace)
-map <leader>o <Action>(FileStructurePopup)
-""" Mappings --------------------------------
-map <leader>f <Plug>(easymotion-s)
-map <leader>e <Plug>(easymotion-f)
-
-map <leader>d <Action>(Debug)
-map <leader>r <Action>(RenameElement)
-map <leader>c <Action>(Stop)
-map <leader>z <Action>(ToggleDistractionFreeMode)
-
-map <leader>s <Action>(SelectInProjectView)
-map <leader>a <Action>(Annotate)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-map <S-Space> <Action>(GotoNextError)
-
-map <leader>b <Action>(ToggleLineBreakpoint)
-map <leader>o <Action>(FileStructurePopup)
