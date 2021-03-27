@@ -53,6 +53,7 @@ print('Put this file into "/home/<your_user>/.config/JetBrains/<product'
 Also, make sure that you clone this repo to have some more settings for IdeaVim, including keybindings:
 
 | keystroke         | action                        |
+| ----------------- | ----------------------------  |
 | S-r (normal mode) | Replace                       |
 | S-e (normal mode) | Recent files                  |
 | <leader>z         | Toggle Distraction Free Mode  |
