@@ -13,50 +13,40 @@ set multiple-cursors
 set highlightedyank
 set showmode
 
+
+" plugin settings
+let g:argtextobj_pairs="[:],(:),<:>"
+
+" itellimmacs
+source ~/.intellimacs/spacemacs.vim
+
+" intellimacs (Optional) Enable other Intellimacs modules
+source ~/.intellimacs/extra.vim
+source ~/.intellimacs/major.vim
+source ~/.intellimacs/hybrid.vim
+
+" intellimacs (Optional) Enable which-key plugin
+source ~/.intellimacs/which-key.vim
+
+" intellimacs (Optional) Comma for major mode
+nmap , <leader>m
+vmap , <leader>m
+
+" intellimacs (Optional) Add/edit actions
+nnoremap <leader>gl    :action Vcs.Show.Log<CR>
+vnoremap <leader>gl    :action Vcs.Show.Log<CR>
+
+" my bindings
+map <leader>si :action FileStructurePopup<CR>
+map <leader>tg :action CodeGlance.toggle<CR>
+map <leader>o :action RecentLocations<CR>
+
 " idea settings
 set ideastatusicon=gray
 
 " cie equals to ggVGc (change in whole document)
 set textobj-entire
 set ReplaceWithRegister
-
-" map leader to space
-let mapleader=" "
-
-" plugin settings
-let g:argtextobj_pairs="[:],(:),<:>"
-
-" key maps with shift replacement for ctrl in Idea
-map <S-r> :action Replace<cr>
-map <S-e> :action RecentFiles<CR>
-
-" key maps with leader replacement for ctrl in Idea
-map <leader>z <Action>(ToggleDistractionFreeMode)
-map <leader>cr <Action>(RenameElement)
-map <leader>fs <Action>(SaveDocument)
-map <leader>ff :action Find<CR>
-map <leader>p :action ParameterInfo<CR>
-map <leader>q :action QuickJavaDoc<CR>
-map <leader>rr :action RefactoringMenu<CR>
-map <leader>tt :action Vcs.UpdateProject<CR>
-map <leader>tg :action CodeGlance.toggle<CR>
-map <leader>o :action RecentLocations<CR>
-map <leader>si :action FileStructurePopup<CR>
-
-" Window jumps based on DOOM
-nnoremap <leader>wl <c-w>l
-nnoremap <leader>wj <c-w>j
-nnoremap <leader>wh <c-w>h
-nnoremap <leader>wk <c-w>k
-nnoremap <leader>wv <c-w>v
-nnoremap <leader>ws <c-w>s
-nnoremap <leader>wd <c-w>c
-
-" ab selection
-nmap <c-j> gT
-nmap <c-l> gt
-
-"nnoremap <leader><leader> :action GotoFile<cr>
 
 " some extra movements
 inoremap <c-e> <end>
