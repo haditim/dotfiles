@@ -16,6 +16,8 @@ set showmode
 
 " plugin settings
 let g:argtextobj_pairs="[:],(:),<:>"
+" behave underscore as not a word
+set iskeyword-=_
 
 " itellimmacs
 source ~/.intellimacs/spacemacs.vim
