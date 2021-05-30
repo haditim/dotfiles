@@ -121,3 +121,6 @@ echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles checkout
 ```
 
+## qutebrowser
+I have a minimal settings which essentially sets good viewing sizes for my 4K monitor, allows opening videos using mpv and enables universal dark mode.
+
