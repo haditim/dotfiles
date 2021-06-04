@@ -52,6 +52,9 @@ bindkey \^U backward-kill-line
 
 source $ZSH/oh-my-zsh.sh
 
+# different history for each terminal windows
+unsetopt share_history
+
 # aliases
 alias dotfiles='/usr/bin/git --git-dir=/home/hadi/.dotfiles/ --work-tree=/home/hadi'
 
