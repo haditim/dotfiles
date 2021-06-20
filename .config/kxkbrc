@@ -1,0 +1,17 @@
+[$Version]
+update_info=kxkb_variants.upd:split-variants
+
+[Layout]
+DisplayNames=,
+LayoutList=us,de,ir
+LayoutLoopCount=-1
+Model=pc104
+Options=grp:shift_caps_toggle
+ResetOldOptions=true
+ShowFlag=false
+ShowLabel=true
+ShowLayoutIndicator=true
+ShowSingle=false
+SwitchMode=WinClass
+Use=true
+VariantList=,us
