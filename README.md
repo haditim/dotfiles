@@ -117,6 +117,7 @@ If the Meta key does not open start menu, edit `config/plasma-org.kde.plasma.des
 rm .cache/plasma* -R
 kbuildsycoca5 && plasmashell --replace &
 ```
+if things are still messy (audio or shortcut issues), just delete `config/plasma-org.kde.plasma.desktop-appletsrc`.
 
 
 # how to use
