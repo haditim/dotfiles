@@ -110,6 +110,15 @@ Spacemacs config is a very simple one with font and theme change plus some layer
 ## KDE plasma
 I added two files `~/.config/kglobalshortcutsrc` and `~/.config/kwinrc` which include my shortcuts as well as virtual desktop settings. I also added `~/.config/kxkbrc` with the hope that it'll save my keyboard layouts, but not sure if works.
 
+### When things go wrong
+If the Meta key does not open start menu, edit `config/plasma-org.kde.plasma.desktop-appletsrc` and set `global=[Meta;NoModifier]` in the `[Containments][1][Applets][2][Shortcuts]` section. Then run
+
+``` shell
+rm .cache/plasma* -R
+kbuildsycoca5 && plasmashell --replace &
+```
+
+
 # how to use
 I use something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
 
