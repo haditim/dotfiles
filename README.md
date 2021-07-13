@@ -98,6 +98,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 ```
 
+### install Starship for a nice prompt while keeping zsh plugins working
+From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy starship`.
+
 ## qutebrowser
 I have a minimal settings which essentially sets good viewing sizes for my 4K monitor, allows opening videos using mpv and enables universal dark mode.
 
