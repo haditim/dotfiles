@@ -122,6 +122,15 @@ kbuildsycoca5 && plasmashell --replace &
 ```
 if things are still messy (audio or shortcut issues), just delete `config/plasma-org.kde.plasma.desktop-appletsrc`.
 
+## GNOME 3
+I install following extensions:
+ - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+ - [Easy Docker Containers](https://extensions.gnome.org/extension/2224/easy-docker-containers/)
+ - [Iranian Persian Calendar](https://extensions.gnome.org/extension/3618/shamsi-calendar/)
+ - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+ - [Sensory Perception](https://extensions.gnome.org/extension/1145/sensory-perception/)
+ - [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
+Configurations are to come.
 
 # how to use
 I use something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
