@@ -124,12 +124,12 @@ if things are still messy (audio or shortcut issues), just delete `config/plasma
 
 ## GNOME 3
 I install following extensions:
- - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
- - [Easy Docker Containers](https://extensions.gnome.org/extension/2224/easy-docker-containers/)
+ - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/90ice-chooser/)
  - [Iranian Persian Calendar](https://extensions.gnome.org/extension/3618/shamsi-calendar/)
  - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
  - [Sensory Perception](https://extensions.gnome.org/extension/1145/sensory-perception/)
- - [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
+ - [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-tab-alt/)
+ - [Tiling Assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/) ([guide](https://github.com/Leleat/Tiling-Assistant/blob/master/Guide.md))
 Configurations are to come.
 
 # how to use
