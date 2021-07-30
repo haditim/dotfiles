@@ -62,4 +62,4 @@ dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 eval "$(starship init zsh)"
 
 # Enable mouse for tmux
-setw -g mouse on
+set -g mouse on
