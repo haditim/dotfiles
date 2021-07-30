@@ -123,14 +123,34 @@ kbuildsycoca5 && plasmashell --replace &
 if things are still messy (audio or shortcut issues), just delete `config/plasma-org.kde.plasma.desktop-appletsrc`.
 
 ## GNOME 3
-I install following extensions:
+Install following extensions:
  - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/90ice-chooser/)
  - [Iranian Persian Calendar](https://extensions.gnome.org/extension/3618/shamsi-calendar/)
  - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
- - [Sensory Perception](https://extensions.gnome.org/extension/1145/sensory-perception/)
  - [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-tab-alt/)
  - [Tiling Assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/) ([guide](https://github.com/Leleat/Tiling-Assistant/blob/master/Guide.md))
-Configurations are to come.
+ - [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
+ - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+ - [SerMon: Service Monitor](https://extensions.gnome.org/extension/1804/sermon/)
+ - [BackSlide](https://extensions.gnome.org/extension/543/backslide/)
+ - [Color Picker](https://extensions.gnome.org/extension/3396/color-picker/)
+ - [GNOME Fuzzy App Search ](https://extensions.gnome.org/extension/3956/gnome-fuzzy-app-search/)
+
+### Configurations
+
+#### Save
+
+``` shell
+dconf dump /org/gnome/shell/ > .config/dconf-gnome-shell.ini
+dconf dump /org/gnome/desktop/ > .config/dconf-gnome.ini
+```
+
+#### Load
+
+``` shell
+dconf load /org/gnome/shell/ < .config/dconf-gnome-shell.ini
+dconf load /org/gnome/desktop/ < .config/dconf-gnome.ini
+```
 
 # how to use
 I use something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
