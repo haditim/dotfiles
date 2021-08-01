@@ -131,6 +131,7 @@ Install following extensions:
 ``` shell
 dconf dump /org/gnome/shell/ > .config/dconf-gnome-shell.ini
 dconf dump /org/gnome/desktop/ > .config/dconf-gnome.ini
+dconf dump /org/gnome/settings-daemon/ > .config/dconf-gnome-settings.ini
 ```
 
 #### Load
@@ -138,6 +139,7 @@ dconf dump /org/gnome/desktop/ > .config/dconf-gnome.ini
 ``` shell
 dconf load /org/gnome/shell/ < .config/dconf-gnome-shell.ini
 dconf load /org/gnome/desktop/ < .config/dconf-gnome.ini
+dconf dump /org/gnome/settings-daemon/ < .config/dconf-gnome-settings.ini
 ```
 
 # how to use
