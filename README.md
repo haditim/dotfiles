@@ -139,7 +139,7 @@ dconf dump /org/gnome/settings-daemon/ > .config/dconf-gnome-settings.ini
 ``` shell
 dconf load /org/gnome/shell/ < .config/dconf-gnome-shell.ini
 dconf load /org/gnome/desktop/ < .config/dconf-gnome.ini
-dconf dump /org/gnome/settings-daemon/ < .config/dconf-gnome-settings.ini
+dconf load /org/gnome/settings-daemon/ < .config/dconf-gnome-settings.ini
 ```
 
 # how to use
