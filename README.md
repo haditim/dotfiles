@@ -74,7 +74,7 @@ dconf load /org/gnome/settings-daemon/ < .config/dconf-gnome-settings.ini
 
 ### Stop annoyances
 
-Delay the time for an app to actually not respond and Gnome showing `"Application" is not responding.`. This is very important if you run any X11 forwarding over SSH. Taken from [askubuntu](https://askubuntu.com/questions/1068921/how-to-disable-the-window-not-responding-dialog).
+Delay the time for an app to actually not respond and Gnome showing `"Application" is not responding.`. This is very important if you run any X11 forwarding over SSH. Taken from [askubuntu](https://askubuntu.com/questions/1068921/how-to-disable-the-window-not-responding-dialog). Also don't forget to have `xorg-x11-xauth` installed.
 
 ``` shell
 # for a 60s delay
