@@ -60,3 +60,6 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 # Bash into running container
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 eval "$(starship init zsh)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi
