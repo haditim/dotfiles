@@ -46,25 +46,25 @@ alias dki="docker run -i -t -P"
 # Execute interactive container, e.g., $dex base /bin/bash
 alias dex="docker exec -i -t"
 # Stop all containers
-dstop() { docker stop $(docker ps -a -q); }
+function dstop() { docker stop $(docker ps -a -q); }
 # Remove all containers
-drm() { docker rm $(docker ps -a -q); }
+function drm() { docker rm $(docker ps -a -q); }
 # Stop and Remove all containers
 alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 # Remove all images
-dri() { docker rmi $(docker images -q); }
+function dri() { docker rmi $(docker images -q); }
 # Dockerfile build, e.g., $dbu tcnksm/test
-dbu() { docker build -t=$1 .; }
+function dbu() { docker build -t=$1 .; }
 # Show all alias related docker
-dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+function dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 # Bash into running container
-dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+function dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 eval "$(starship init zsh)"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
 
-vterm_printf(){
+function vterm_printf(){
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
         # Tell tmux to pass the escape sequences through
         printf "\ePtmux;\e\e]%s\007\e\\" "$1"
