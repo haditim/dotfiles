@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Enale mouse & KB (tablet mode)
+Exec=bash -c ~/.scripts/enable_kb_mouse.sh
+Icon=/usr/share/icons/Adwaita/scalable/actions/process-stop-symbolic.svg
+Type=Application
+StartupNotify=true

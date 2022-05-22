@@ -41,35 +41,18 @@ The emacs configuration encompasses files related to Chemacs2. These are `.emacs
 ### Spacemacs
 Spacemacs config is a very simple one with font and theme change plus some layers like Python, Kotlin, etc.. I just use Spacemacs for trying another viable emacs option beside Doom emacs. For a complete working config of an emacs IDE setup, use my [Doom emacs configuration](https://github.com/haditim/.doom.d "doom configs") repo.
 
-## GNOME 3
-I liked the following extensions:
- - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/90ice-chooser/)
- - [Iranian Persian Calendar](https://extensions.gnome.org/extension/3618/shamsi-calendar/)
- - [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
- - [Tiling Assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/) ([guide](https://github.com/Leleat/Tiling-Assistant/blob/master/Guide.md))
- - [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
- - [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
- - [SerMon: Service Monitor](https://extensions.gnome.org/extension/1804/sermon/)
- - [BackSlide](https://extensions.gnome.org/extension/543/backslide/)
- - [Color Picker](https://extensions.gnome.org/extension/3396/color-picker/)
- - [GNOME Fuzzy App Search ](https://extensions.gnome.org/extension/3956/gnome-fuzzy-app-search/)
-
 ### Configurations
 
 #### Save
 
 ``` shell
-dconf dump /org/gnome/shell/ > .config/dconf-gnome-shell.ini
-dconf dump /org/gnome/desktop/ > .config/dconf-gnome.ini
-dconf dump /org/gnome/settings-daemon/ > .config/dconf-gnome-settings.ini
+dconf dump / > .config/dconf-root.ini
 ```
 
 #### Load
 
 ``` shell
-dconf load /org/gnome/shell/ < .config/dconf-gnome-shell.ini
-dconf load /org/gnome/desktop/ < .config/dconf-gnome.ini
-dconf load /org/gnome/settings-daemon/ < .config/dconf-gnome-settings.ini
+dconf load / < .config/dconf-root.ini
 ```
 
 ### Stop annoyances
@@ -80,6 +63,12 @@ Delay the time for an app to actually not respond and Gnome showing `"Applicatio
 # for a 60s delay
 gsettings set org.gnome.mutter check-alive-timeout 60000
 ```
+
+## Misc
+
+### disable and enable keyboard and touchpad for tablet mode
+
+My HP X360 does not disable tablet mode using the hardware switch. For this reason, I added some files in the `.scripts` directory to manually disable and enable keyboard and touch pad. There are also two corresponding `.desktop` files to allow usage as a normal app. Make sure you have `evtest` installed and remember to adjust your keyboard and touch pad ids in the `.sh` files in `.scripts` folder. You can see a list of devices using `ls /dev/input/by-path`. 
 
 # how to use
 I use something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
