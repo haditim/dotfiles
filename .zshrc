@@ -1,4 +1,5 @@
 export ZSH="/home/hadi/.oh-my-zsh"
+export ZSH_DOTENV_PROMPT=false
 plugins=(
   git
 #  zsh-syntax-highlighting
@@ -78,3 +79,5 @@ function vterm_printf(){
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
