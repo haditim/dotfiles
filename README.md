@@ -19,24 +19,29 @@ These are personal preferences and don't necessarily need to be installed
 I decided to go with [Intellimacs](https://github.com/MarcoIeni/intellimacs) keybindings. To enable it, install Intellimacs first with `git clone https://github.com/MarcoIeni/intellimacs ~/.intellimacs`.
 
 ## oh-my-zsh
-A better-looking and acting terminal. The color scheme works on "dark" terminal themes.
+A better-looking and acting terminal. The color scheme works on "dark" terminal themes. Install it using
 
-### install required plugins by
-
+``` shell
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+install required plugins by
 ``` shell
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 ```
-
-### install Starship for a nice prompt while keeping zsh plugins working
+install Starship for a nice prompt while keeping zsh plugins working
 From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy starship`.
 
 ## qutebrowser
 I have a minimal settings which essentially sets good viewing sizes for my 4K monitor, allows opening videos using mpv and enables universal dark mode.
 
 ## emacs
-The emacs configuration encompasses files related to Chemacs2. These are `.emacs-profiles.el` and `.emacs-profile` with two configs, one pointing to my [Doom emacs configuration](https://github.com/haditim/.doom.d "doom configs") and one to my Spacemacs configuration which is included in the current repo under `.spacemacsconfig.d` directory.
+The emacs configuration encompasses files related to [Chemacs2](https://github.com/plexus/chemacs2). These are `.emacs-profiles.el` and `.emacs-profile` with two configs, one pointing to my [Doom emacs configuration](https://github.com/haditim/.doom.d "doom configs") and one to my Spacemacs configuration which is included in the current repo under `.spacemacsconfig.d` directory.
+Install Chemacs by
+``` shell
+git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
+```
 
 ### Spacemacs
 Spacemacs config is a very simple one with font and theme change plus some layers like Python, Kotlin, etc.. I just use Spacemacs for trying another viable emacs option beside Doom emacs. For a complete working config of an emacs IDE setup, use my [Doom emacs configuration](https://github.com/haditim/.doom.d "doom configs") repo.
@@ -91,7 +96,5 @@ git push --set-upstream origin master
 ``` sh
 git clone --bare https://github.com/haditim/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
-echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 dotfiles checkout
 ```
