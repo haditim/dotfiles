@@ -65,6 +65,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
 
+# libvterm serttings for emacs' vterm
 function vterm_printf(){
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
         # Tell tmux to pass the escape sequences through
@@ -76,6 +77,14 @@ function vterm_printf(){
         printf "\e]%s\e\\" "$1"
     fi
 }
+
+vterm_prompt_end() {
+    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)";
+}
+setopt PROMPT_SUBST
+PROMPT='%{$(vterm_printf)%}'$PROMPT'%{$(vterm_prompt_end)%}'
+
+# Tilix settings
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
