@@ -65,6 +65,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
 
+function pyclean() { find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete }
+
 # libvterm serttings for emacs' vterm
 function vterm_printf(){
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
