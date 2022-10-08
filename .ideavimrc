@@ -63,6 +63,12 @@ inoremap <c-j> <down>
 " alt-x ctrl+shift+a
 nmap <A-x> :action GotoAction<CR>
 
+" move line/selection up and down
+nmap <A-p> :action MoveLineUp<CR>
+nmap <A-n> :action MoveLineDown<CR>
+vmap <A-p> :action MoveStatementUp<CR>
+vmap <A-n> :action MoveStatementDown<CR>
+
 " code navigation using ctrl-o and ctrl-i
 nnoremap <c-o> :action Back<cr>
 nnoremap <c-i> :action Forward<cr>
