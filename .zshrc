@@ -13,6 +13,7 @@ plugins=(
   pip
   python
   docker
+  kubectl
   docker-compose
   dotenv
 )
