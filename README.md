@@ -1,3 +1,5 @@
+NOTE: this repo is now hosted mainly on [Codeberg](https://codeberg.org/haditim/dotfiles) and [GitHub](https://github.com/haditim/dotfiles) serves as its mirror.
+
 # dot files
 These are my public dot files including following:
 
