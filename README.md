@@ -39,7 +39,7 @@ From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy stars
 I have a minimal settings which essentially sets good viewing sizes for my 4K monitor, allows opening videos using mpv and enables universal dark mode.
 
 ## emacs
-The emacs configuration encompasses files related to [Chemacs2](https://github.com/plexus/chemacs2). These are `.emacs-profiles.el` and `.emacs-profile` with two configs, one pointing to my [Doom emacs configuration](https://github.com/haditim/.doom.d "doom configs") and one to my Spacemacs configuration which is included in the current repo under `.spacemacsconfig.d` directory.
+The emacs configuration encompasses files related to [Chemacs2](https://github.com/plexus/chemacs2). These are `.emacs-profiles.el` and `.emacs-profile` with two configs, one pointing to my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") and one to my Spacemacs configuration which is included in the current repo under `.spacemacsconfig.d` directory.
 Install Chemacs by
 ``` shell
 git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
