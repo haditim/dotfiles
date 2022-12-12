@@ -46,7 +46,7 @@ git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
 ```
 
 ### Spacemacs
-Spacemacs config is a very simple one with font and theme change plus some layers like Python, Kotlin, etc.. I just use Spacemacs for trying another viable emacs option beside Doom emacs. For a complete working config of an emacs IDE setup, use my [Doom emacs configuration](https://github.com/haditim/.doom.d "doom configs") repo.
+Spacemacs config is a very simple one with font and theme change plus some layers like Python, Kotlin, etc.. I just use Spacemacs for trying another viable emacs option beside Doom emacs. For a complete working config of an emacs IDE setup, use my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") repo.
 
 ### Configurations
 
@@ -89,14 +89,14 @@ dotfiles config --local status.showUntrackedFiles no
 echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
 echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
 
-dotfiles remote add origin https://github.com/haditim/dotfiles
+dotfiles remote add origin https://codeberg.org/haditim/dotfiles
 git push --set-upstream origin master
 ```
 
 ## to checkout from github
 
 ``` sh
-git clone --bare https://github.com/haditim/dotfiles.git $HOME/.dotfiles
+git clone --bare https://codeberg.org/haditim/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles checkout
 ```

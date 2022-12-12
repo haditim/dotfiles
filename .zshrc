@@ -1,5 +1,6 @@
 export ZSH="/home/hadi/.oh-my-zsh"
 export ZSH_DOTENV_PROMPT=false
+export MOZ_ENABLE_WAYLAND=1
 plugins=(
   git
 #  zsh-syntax-highlighting
@@ -66,7 +67,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
 
-function pyclean() { find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete }
+function pyclean() { find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete -o -type d -name .mypy_cache -exec rm -r {} + }
 
 # libvterm serttings for emacs' vterm
 function vterm_printf(){
