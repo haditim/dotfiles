@@ -94,3 +94,6 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Fix for TRAMP hanging/not showing the terminal
+[ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
