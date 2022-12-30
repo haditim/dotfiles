@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Disable mouse & KB (tablet mode)
-Exec=bash -c ~/.scripts/disable_kb_mouse.sh
-Icon=/usr/share/icons/Adwaita/scalable/actions/document-edit-symbolic.svg
-Type=Application
-StartupNotify=true
