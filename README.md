@@ -35,9 +35,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plug
 install Starship for a nice prompt while keeping zsh plugins working
 From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy starship`.
 
-## qutebrowser
-I have a minimal settings which essentially sets good viewing sizes for my 4K monitor, allows opening videos using mpv and enables universal dark mode.
-
 ## emacs
 The emacs configuration encompasses files related to [Chemacs2](https://github.com/plexus/chemacs2). These are `.emacs-profiles.el` and `.emacs-profile` with two configs, one pointing to my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") and one to my Spacemacs configuration which is included in the current repo under `.spacemacsconfig.d` directory.
 Install Chemacs by
@@ -48,21 +45,7 @@ git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
 ### Spacemacs
 Spacemacs config is a very simple one with font and theme change plus some layers like Python, Kotlin, etc.. I just use Spacemacs for trying another viable emacs option beside Doom emacs. For a complete working config of an emacs IDE setup, use my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") repo.
 
-### Configurations
-
-#### Save
-
-``` shell
-dconf dump / > .config/dconf-root.ini
-```
-
-#### Load
-
-``` shell
-dconf load / < .config/dconf-root.ini
-```
-
-### Stop annoyances
+## Stop GNOME annoyances
 
 Delay the time for an app to actually not respond and Gnome showing `"Application" is not responding.`. This is very important if you run any X11 forwarding over SSH. Taken from [askubuntu](https://askubuntu.com/questions/1068921/how-to-disable-the-window-not-responding-dialog). Also don't forget to have `xorg-x11-xauth` installed.
 
@@ -70,12 +53,6 @@ Delay the time for an app to actually not respond and Gnome showing `"Applicatio
 # for a 60s delay
 gsettings set org.gnome.mutter check-alive-timeout 60000
 ```
-
-## Misc
-
-### disable and enable keyboard and touchpad for tablet mode
-
-My HP X360 does not disable tablet mode using the hardware switch. For this reason, I added some files in the `.scripts` directory to manually disable and enable keyboard and touch pad. There are also two corresponding `.desktop` files to allow usage as a normal app. Make sure you have `evtest` installed and remember to adjust your keyboard and touch pad ids in the `.sh` files in `.scripts` folder. You can see a list of devices using `ls /dev/input/by-path`. 
 
 # how to use
 I use something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
@@ -93,7 +70,7 @@ dotfiles remote add origin https://codeberg.org/haditim/dotfiles
 git push --set-upstream origin master
 ```
 
-## to checkout from github
+## to checkout from codeberg/github
 
 ``` sh
 git clone --bare https://codeberg.org/haditim/dotfiles.git $HOME/.dotfiles
