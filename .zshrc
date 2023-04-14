@@ -97,3 +97,6 @@ fi
 
 # Fix for TRAMP hanging/not showing the terminal
 [ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
+
+# Eat integration
+[ -n "$EAT_SHELL_INTEGRATION_DIR" ] && source "$EAT_SHELL_INTEGRATION_DIR/zsh"
