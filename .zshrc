@@ -2,66 +2,53 @@ export ZSH="/home/hadi/.oh-my-zsh"
 export ZSH_DOTENV_PROMPT=false
 export MOZ_ENABLE_WAYLAND=1
 plugins=(
-  git
-#  zsh-syntax-highlighting
-  zsh-autosuggestions
-  extract
-  colored-man-pages
-  sudo
-  history
   catimg
+  colored-man-pages
+  docker
+  docker-compose
+  dotenv
+  emacs
+  extract
+  git
+  history
+  kubectl
   npm
   pip
   python
-  docker
-  kubectl
-  docker-compose
-  dotenv
+  sudo
+  zsh-autosuggestions
 )
 
-
-# delete from caret to line start by ctrl+U
+# Delete from caret to line start by ctrl+U
 bindkey \^U backward-kill-line
 
 source $ZSH/oh-my-zsh.sh
 
-# different history for each terminal windows
+# Different history for each terminal windows
 unsetopt share_history
 
-# aliases
+# Aliases
 alias dotfiles='/usr/bin/git --git-dir=/home/hadi/.dotfiles/ --work-tree=/home/hadi'
 
-## docker (from https://github.com/tcnksm/docker-alias)
-# Get latest container ID
-alias dl="docker ps -l -q"
-# Get container process
+### Some more Docker aliases (others are covered by plugins)
+## Processes
 alias dps="docker ps"
-# Get process included stop container
+## Get process included stop container
 alias dpa="docker ps -a"
-# Get images
-alias di="docker images"
-# Get container IP
+## Get container IP
 alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
-# Run deamonized container, e.g., $dkd base /bin/echo hello
-alias dkd="docker run -d -P"
-# Run interactive container, e.g., $dki base /bin/bash
-alias dki="docker run -i -t -P"
-# Execute interactive container, e.g., $dex base /bin/bash
-alias dex="docker exec -i -t"
-# Stop all containers
+## Stop all containers
 function dstop() { docker stop $(docker ps -a -q); }
-# Remove all containers
+## Remove all containers
 function drm() { docker rm $(docker ps -a -q); }
-# Stop and Remove all containers
+## Stop and Remove all containers
 alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
-# Remove all images
+## Remove all images
 function dri() { docker rmi $(docker images -q); }
-# Dockerfile build, e.g., $dbu tcnksm/test
-function dbu() { docker build -t=$1 .; }
-# Show all alias related docker
-function dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
-# Bash into running container
+## Bash into running container
 function dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+
+# Starship
 eval "$(starship init zsh)"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
@@ -93,6 +80,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
 
+# Fuzzy history search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Fix for TRAMP hanging/not showing the terminal
@@ -100,3 +88,14 @@ fi
 
 # Eat integration
 [ -n "$EAT_SHELL_INTEGRATION_DIR" ] && source "$EAT_SHELL_INTEGRATION_DIR/zsh"
+
+# Set different defaults if in emacs
+if [[ ${INSIDE_EMACS:-no} != 'no' ]]; then
+    export EDITOR=emacsclient
+    export VISUAL=emacsclient
+    export PAGER=cat
+
+    alias magit="emacsclient -ne '(magit-status)'"
+
+    function man() { emacsclient -ne "(man \"$1\")"; }
+fi
