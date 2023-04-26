@@ -21,6 +21,9 @@ set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
+# Run Starship (before emacs)
+starship init fish | source
+
 # Set different defaults if in emacs
 if [ "$INSIDE_EMACS" = 'vterm' ]
     export EDITOR=emacsclient
@@ -71,6 +74,3 @@ if [ "$INSIDE_EMACS" = 'vterm' ]
     end
 end
 
-
-# Run Starship
-starship init fish | source
