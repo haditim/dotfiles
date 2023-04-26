@@ -21,6 +21,9 @@ set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 
+# Remove greeting
+set fish_greeting
+
 # Run Starship (before emacs)
 starship init fish | source
 

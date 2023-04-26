@@ -21,6 +21,8 @@ These are personal preferences and don't necessarily need to be installed
 I decided to go with [Intellimacs](https://github.com/MarcoIeni/intellimacs) keybindings. To enable it, install Intellimacs first with `git clone https://github.com/MarcoIeni/intellimacs ~/.intellimacs`.
 
 ## shell
+In Arch Linux you can change the shell with `chsh -c /usr/bin/fish`.
+
 ### fish
 I currently use fish as my main shell. It is set up to support vterm inside emacs with starship. My aliases and functions are also included in the config. If you need to move your zsh history to shell, you can use [zsh-history-to-fish](https://pypi.org/project/zsh-history-to-fish/).
 
@@ -34,6 +36,7 @@ install required plugins by
 ``` shell
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 ```
+
 ### Starship
 install Starship for a nice prompt while keeping zsh plugins/fish/vterm working
 From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy starship`.
