@@ -20,7 +20,11 @@ These are personal preferences and don't necessarily need to be installed
 ### keymaps
 I decided to go with [Intellimacs](https://github.com/MarcoIeni/intellimacs) keybindings. To enable it, install Intellimacs first with `git clone https://github.com/MarcoIeni/intellimacs ~/.intellimacs`.
 
-## oh-my-zsh
+## shell
+### fish
+I currently use fish as my main shell. It is set up to support vterm inside emacs with starship. My aliases and functions are also included in the config. If you need to move your zsh history to shell, you can use [zsh-history-to-fish](https://pypi.org/project/zsh-history-to-fish/).
+
+### oh-my-zsh
 A better-looking and acting terminal. The color scheme works on "dark" terminal themes. Install it using
 
 ``` shell
@@ -28,11 +32,10 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 ```
 install required plugins by
 ``` shell
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 ```
-install Starship for a nice prompt while keeping zsh plugins working
+### Starship
+install Starship for a nice prompt while keeping zsh plugins/fish/vterm working
 From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy starship`.
 
 ## emacs
