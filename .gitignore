@@ -1,0 +1,11 @@
+*
+*/
+!.config/fish/*
+!.config/kitty/*
+!.emacs-profile
+!.emacs-profiles.el
+!.ideavimrc
+!.spacemacsconfig.d/*
+!.zshrc
+!.gitignore
+!README.md
