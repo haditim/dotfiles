@@ -75,5 +75,10 @@ if [ "$INSIDE_EMACS" = 'vterm' ]
         end
         vterm_printf '51;E'(string join '' $vterm_elisp)
     end
+else
+    function emacsc
+        emacsclient -c -a="" -nw
+    end
+    export EDITOR=emacsc
 end
 
