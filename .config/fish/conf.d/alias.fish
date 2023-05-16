@@ -76,3 +76,8 @@ function pyclean
     -delete -o -type d -name __pycache__ \
     -delete -o -type d -name .mypy_cache -exec rm -r {} +
 end
+
+# Emacs with a new deamon if not exist                                                                                                                                                                                                                                                                                                             
+alias em="emacsclient -c -a="" -nw"                                                                                                                                                                                                                                                                                                                
+# Magit (Emacs git client)                                                                                                                                                                                                                                                                                                                         
+alias magit="emacsclient -c -a="" -nw -e '(magit-status)'"  
