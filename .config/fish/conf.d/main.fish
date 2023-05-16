@@ -20,6 +20,9 @@ set -g fish_color_search_match 'bryellow'  '--background=brblack'
 set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
+set EDITOR emacsclient -c -a="" -nw                                                                                                                                                                                                                                                                                                                
+set VISUAL emacsclient -c -a="" -nw                                                                                                                                                                                                                                                                                                                
+set PAGER cat 
 
 # Remove greeting
 set fish_greeting
@@ -29,10 +32,6 @@ starship init fish | source
 
 # Set different defaults if in emacs
 if [ "$INSIDE_EMACS" = 'vterm' ]
-    export EDITOR=emacsclient
-    export VISUAL=emacsclient
-    export PAGER=cat
-
     alias magit="emacsclient -ne '(magit-status)'"
 
     function man
@@ -75,10 +74,5 @@ if [ "$INSIDE_EMACS" = 'vterm' ]
         end
         vterm_printf '51;E'(string join '' $vterm_elisp)
     end
-else
-    function emacsc
-        emacsclient -c -a="" -nw
-    end
-    export EDITOR=emacsc
 end
 
