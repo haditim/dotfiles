@@ -2,6 +2,8 @@
 */
 !.config/fish/*
 !.config/kitty/*
+!.config/tmux/*
+!.config/foot/*
 !.emacs-profile
 !.emacs-profiles.el
 !.ideavimrc
