@@ -18,7 +18,7 @@ These are personal preferences and don't necessarily need to be installed
 
 
 ### keymaps
-I decided to go with [Intellimacs](https://github.com/MarcoIeni/intellimacs) keybindings. To enable it, install Intellimacs first with `git clone https://github.com/MarcoIeni/intellimacs ~/.intellimacs`.
+I decided to go with [Intellimacs](https://github.com/MarcoIeni/intellimacs) keybindings. To enable it, install Intellimacs first with `git clone https://github.com/MarcoIeni/intellimacs ~/.config/intellimacs`. There is symlink that takes care of hard-coded paths in the intellimacs to `~/.intellimacs`.
 
 ## shell
 In Arch Linux you can change the shell with `chsh -c /usr/bin/fish`.
@@ -42,10 +42,10 @@ install Starship for a nice prompt while keeping zsh plugins/fish/vterm working
 From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy starship`.
 
 ## emacs
-The emacs configuration encompasses files related to [Chemacs2](https://github.com/plexus/chemacs2). These are `.emacs-profiles.el` and `.emacs-profile` with two configs, one pointing to my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") and one to my Spacemacs configuration which is included in the current repo under `.spacemacsconfig.d` directory.
+The emacs configuration encompasses files related to [Chemacs2](https://github.com/plexus/chemacs2). These are `.config/chemacs/profiles.el` and `.config/chemacs/profile` with two configs, one pointing to my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") and one to my Spacemacs configuration which is included in the current repo under `.config/spacemacsconfig` directory.
 Install Chemacs by
 ``` shell
-git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
+git clone https://github.com/plexus/chemacs2.git ~/.config/emacs
 ```
 
 ### Spacemacs

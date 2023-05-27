@@ -4,10 +4,10 @@
 !.config/kitty/*
 !.config/tmux/*
 !.config/foot/*
-!.emacs-profile
-!.emacs-profiles.el
+!.config/chemacs/*
+!.config/spacemacsconfig/*
+!.config/ideavim/*
 !.ideavimrc
-!.spacemacsconfig.d/*
 !.zshrc
 !.gitignore
 !README.md

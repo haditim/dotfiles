@@ -46,6 +46,10 @@ alias dkd="docker run -d -P"
 alias dki="docker run -i -t -P"
 # Execute interactive container, e.g., $dex base /bin/bash
 alias dex="docker exec -i -t"
+# Docker logs follow
+alias dlf="docker logs -f"
+# Docker logs follow tail
+alias dlt="docker logs -f -n 100"
 # Stop all containers
 function dstop
     docker stop $(docker ps -a -q)
