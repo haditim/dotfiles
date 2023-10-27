@@ -16,6 +16,7 @@ abbr -a gf  git fetch
 abbr -a gfc git findcommit
 abbr -a gfm git findmessage
 abbr -a gco git checkout
+abbr -a gt git log --oneline --graph --decorate --all   # git tree
 
 # ls
 alias l='ls -l'
