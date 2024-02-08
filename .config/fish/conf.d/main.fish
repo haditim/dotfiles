@@ -20,9 +20,9 @@ set -g fish_color_search_match 'bryellow'  '--background=brblack'
 set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
 set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
-set EDITOR emacsclient -c -a="" -nw                                                                                                                                                                                                                                                                                                                
-set VISUAL emacsclient -c -a="" -nw                                                                                                                                                                                                                                                                                                                
-set PAGER cat 
+set EDITOR emacsclient -c -a="" -nw
+set VISUAL emacsclient -c -a="" -nw
+set PAGER cat
 
 # Remove greeting
 set fish_greeting
@@ -80,3 +80,4 @@ end
 function mark_prompt_start --on-event fish_prompt
     echo -en "\e]133;A\e\\"
 end
+direnv hook fish | source
