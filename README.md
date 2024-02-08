@@ -63,7 +63,7 @@ gsettings set org.gnome.mutter check-alive-timeout 60000
 # how to use
 I use something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
 
-## new setup 
+## new setup
 
 ``` sh
 git init --bare $HOME/.dotfiles
@@ -83,3 +83,6 @@ git clone --bare https://codeberg.org/haditim/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles checkout
 ```
+
+## direnv
+You need to install `direnv` from your distro package manager to be able to use it.
