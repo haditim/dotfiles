@@ -17,6 +17,8 @@ abbr -a gfc git findcommit
 abbr -a gfm git findmessage
 abbr -a gco git checkout
 abbr -a gt git log --oneline --graph --decorate --all   # git tree
+abbr -a gfs "git rev-list --all --objects | git cat-file --batch-check='%(objectname) %(objecttype) %(objectsize) %(rest)' | grep blob | sort -k3nr | head -n 20"  # git file sizes
+
 
 # ls
 alias l='ls -l'
