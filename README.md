@@ -4,7 +4,7 @@ NOTE: this repo is now hosted mainly on [Codeberg](https://codeberg.org/haditim/
 These are my public dot files including following:
 
 ## ideavimrc
-For the times that something happens to my Doom Emacs and an alternative is needed, I made an `Intellij Idea` config as close as possible to my Doom Emacs in terms of keybindings etc.
+For the times that I have to use an alternative to emacs, I made an `Intellij Idea` config as close as possible to my emacs in terms of keybindings etc.
 
 ### required plugins
 These are personal preferences and don't necessarily need to be installed
@@ -42,7 +42,7 @@ install Starship for a nice prompt while keeping zsh plugins/fish/vterm working
 From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy starship`.
 
 ## emacs
-My main doom emacs configuration can be found in [my dotemacs repository](https://codeberg.org/haditim/dotemacs) which can be cloned to `.config/emacs`. I also use other configs from time to time, for which I set another directory. For example, Doom Emacs can be used by cloning it into a directory inside `.config`:
+My main emacs configuration can be found in [my dotemacs repository](https://codeberg.org/haditim/dotemacs) which can be cloned to `.config/emacs`. I also use other configs from time to time, for which I set another directory. For example, Doom Emacs can be used by cloning it into a directory inside `.config`:
 
 ``` shell
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.config/doomemacs
