@@ -42,11 +42,12 @@ install Starship for a nice prompt while keeping zsh plugins/fish/vterm working
 From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy starship`.
 
 ## emacs
-The emacs configuration encompasses files related to [Chemacs2](https://github.com/plexus/chemacs2). These are `.config/chemacs/profiles.el` and `.config/chemacs/profile` with two configs, one pointing to my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") and one to my Spacemacs configuration which is included in the current repo under `.config/spacemacsconfig` directory.
-Install Chemacs by
+My main doom emacs configuration can be found in [my dotemacs repository](https://codeberg.org/haditim/dotemacs) which can be cloned to `.config/emacs`. I also use other configs from time to time, for which I set another directory. For example, Doom Emacs can be used by cloning it into a directory inside `.config`:
+
 ``` shell
-git clone https://github.com/plexus/chemacs2.git ~/.config/emacs
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.config/doomemacs
 ```
+Then be used like `DOOMDIR=~/.config/doom emacs --init-directory ~/.config/doomemacs` (given that you have your doom config in the `~/.config/doom`, look at my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") that you can clone there). I used to use [Chemacs2](https://github.com/plexus/chemacs2) that is not needed from emacs version 29.
 
 ### Spacemacs
 Spacemacs config is a very simple one with font and theme change plus some layers like Python, Kotlin, etc.. I just use Spacemacs for trying another viable emacs option beside Doom emacs. For a complete working config of an emacs IDE setup, use my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") repo.
