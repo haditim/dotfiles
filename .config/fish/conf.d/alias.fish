@@ -30,7 +30,7 @@ alias lt='ls --tree'
 alias reload='exec fish'
 
 # dotfiles
-alias dotfiles='/usr/bin/git --git-dir=/home/hadi/.dotfiles/ --work-tree=/home/hadi'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # docker
 # Get latest container ID
@@ -84,7 +84,7 @@ function pyclean
     -delete -o -type d -name .mypy_cache -exec rm -r {} +
 end
 
-# Emacs with a new deamon if not exist                                                                                                                                                                                                                                                                                                             
-alias em="emacsclient -c -a="" -nw"                                                                                                                                                                                                                                                                                                                
-# Magit (Emacs git client)                                                                                                                                                                                                                                                                                                                         
-alias magit="emacsclient -c -a="" -nw -e '(magit-status)'"  
+# Emacs with a new deamon if not exist
+alias em="emacsclient -c -a="" -nw"
+# Magit (Emacs git client)
+alias magit="emacsclient -c -a="" -nw -e '(magit-status)'"

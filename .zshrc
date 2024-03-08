@@ -1,4 +1,4 @@
-export ZSH="/home/hadi/.oh-my-zsh"
+export ZSH="/home/$HOME/.oh-my-zsh"
 export ZSH_DOTENV_PROMPT=false
 export MOZ_ENABLE_WAYLAND=1
 plugins=(
