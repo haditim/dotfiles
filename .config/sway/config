@@ -16,7 +16,7 @@ for_window [title="^.*"] border pixel 1, title_format "<b> %class >> %title </b>
 default_border pixel 2
 
 # gaps
-gaps inner 4
+gaps inner 0
 gaps outer 0
 smart_gaps on
 
@@ -127,15 +127,15 @@ bindsym $Mod+Shift+F8 move container to workspace number 8; workspace number 8
 bindsym $Mod+f floating toggle
 floating_modifier $Mod normal
 
+# Swap focus between the tiling area and the floating area
+bindsym $Mod+Shift+space focus mode_toggle
+
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
 
 # Move the currently focused window to the scratchpad
-bindsym $Mod+Shift+z move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $Mod+z scratchpad show
+bindsym $Mod+Shift+minus move scratchpad
+bindsym $Mod+minus scratchpad show
 
 # change focus
 bindsym $Mod+h  focus left
@@ -208,21 +208,10 @@ bindsym $Mod+Shift+f fullscreen
 # changing border style
 bindsym $Mod+b border toggle
 
-# change gaps
-bindsym $Mod+plus                gaps inner current plus  5
-bindsym $Mod+minus               gaps inner current minus 5
-bindsym Mod1+plus                gaps outer current plus  5
-bindsym Mod1+minus               gaps outer current minus 5
-
-bindsym $Mod+KP_Add              gaps inner current plus  5
-bindsym $Mod+KP_Subtract         gaps inner current minus 5
-bindsym Mod1+KP_Add              gaps outer current plus  5
-bindsym Mod1+KP_Subtract         gaps outer current minus 5
-
 ############    application settings   ############
 
 # focus, floating, & sticky
-for_window [app_id="(?i)(?:blueman-manager|azote|gnome-disks)"] floating enable
+for_window [app_id="(?i)(?:blueman-manager|azote|gnome-disks|mpv)"] floating enable
 for_window [app_id="(?i)(?:pavucontrol|nm-connection-editor|gsimplecal|galculator)"] floating enable
 for_window [app_id="(?i)(?:firefox|chromium)"] border none
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
