@@ -5,4 +5,6 @@ set -x GPG_TTY (tty)
 if status --is-interactive
     keychain --eval --agents ssh --quiet -Q id_rsa | source
     keychain --eval --agents gpg --quiet --gpg2 -Q | source
+    # Add all inside ssh folder
+    grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add -q
 end

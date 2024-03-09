@@ -14,6 +14,7 @@ include touchpad
 # border & title
 for_window [title="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 default_border pixel 2
+default_floating_border pixel 4
 
 # gaps
 gaps inner 0
@@ -56,7 +57,6 @@ bindsym Mod1+F4 kill
 # core applications
 bindsym $Mod+Return       exec $term
 bindsym $Mod+Shift+Return exec $editor
-bindsym Control+Shift+t   exec $term
 bindsym $Mod+Shift+p      exec nwg-shell-config
 bindsym $Mod+Shift+d      exec $dock
 bindsym $Mod+e            exec $filemanager

@@ -29,9 +29,34 @@
       "scratchpad",
       "tray",
       "button-help",
-      "button-clipman"
+      "button-clipman",
+      "executor-keyboard"
     ],
-    "sway-taskbar": {},
+    "sway-taskbar": {
+      "workspace-menu": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "name-max-len": 20,
+      "image-size": 16,
+      "workspaces-spacing": 0,
+      "task-padding": 0,
+      "show-app-icon": true,
+      "show-app-name": true,
+      "show-layout": true,
+      "workspace-buttons": false,
+      "all-workspaces": true,
+      "mark-autotiling": true,
+      "mark-xwayland": true,
+      "all-outputs": false,
+      "angle": 0.0
+    },
     "controls-settings": {
       "alignment": "right",
       "components": [
@@ -103,7 +128,7 @@
       "icon-size": 18,
       "hover-opens": false,
       "leave-closes": true,
-      "click-closes": false,
+      "click-closes": true,
       "css-name": "controls-window",
       "net-interface": "wlo1",
       "system-shutdown-symbolic": "system-shutdown",
@@ -117,8 +142,8 @@
       "window-margin-horizontal": 4,
       "window-margin-vertical": 4,
       "angle": 0.0,
-      "show-brightness": false,
-      "show-volume": false,
+      "show-brightness": true,
+      "show-volume": true,
       "show-battery": true,
       "per-app-volume": false,
       "battery-low-interval": 3,
@@ -144,25 +169,43 @@
         "2",
         "3",
         "4",
-        "5",
-        "6",
-        "7",
-        "8"
+        "5"
       ],
       "show-icon": true,
       "image-size": 16,
       "show-name": true,
       "name-length": 20,
-      "mark-autotiling": false,
+      "mark-autotiling": true,
       "mark-content": true,
-      "show-layout": true
+      "show-layout": true,
+      "custom-labels": [],
+      "focused-labels": [],
+      "hide-empty": false,
+      "angle": 0.0
     },
     "scratchpad": {
       "css-name": "",
       "icon-size": 20
     },
     "menu-start": "off",
-    "menu-start-settings": {},
+    "menu-start-settings": {
+      "cmd-lock": "swaylock -f -c 000000",
+      "cmd-logout": "swaymsg exit",
+      "cmd-restart": "systemctl reboot",
+      "cmd-shutdown": "systemctl -i poweroff",
+      "autohide": true,
+      "file-manager": "thunar",
+      "icon-size-large": 32,
+      "icon-size-small": 16,
+      "icon-size-button": 16,
+      "margin-bottom": 0,
+      "margin-left": 0,
+      "margin-right": 0,
+      "margin-top": 0,
+      "padding": 2,
+      "terminal": "foot",
+      "run-through-compositor": true
+    },
     "executor-cpuav": {
       "script": "gopsuinfo -i a",
       "tooltip-text": "average CPU load",
@@ -247,6 +290,40 @@
     "sway-mode": {},
     "hyprland-taskbar": {},
     "hyprland-workspaces": {},
-    "start-hidden": false
+    "start-hidden": false,
+    "executor-keyboard": {
+      "script": "keyboard-layout",
+      "tooltip-text": "switch keyboard layout",
+      "on-left-click": "keyboard-layout -s",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "root-css-name": "",
+      "css-name": "",
+      "icon-placement": "left",
+      "icon-size": 16,
+      "interval": 2,
+      "angle": 0.0,
+      "sigrt": 37,
+      "use-sigrt": true
+    },
+    "executor-direct-keyboard": {
+      "script": "python -c 'from i3ipc import Connection;\ni3=Connection()\nprint(\"input-keyboard\")\nprint([item.xkb_active_layout_name for item in i3.get_inputs() if \"keyboard\" in item.identifier][0])'",
+      "tooltip-text": "input",
+      "on-left-click": "swaymsg input type:keyboard xkb_switch_layout next",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "root-css-name": "",
+      "css-name": "",
+      "icon-placement": "left",
+      "icon-size": 16,
+      "interval": 1,
+      "angle": 0.0,
+      "sigrt": 34,
+      "use-sigrt": false
+    }
   }
 ]
