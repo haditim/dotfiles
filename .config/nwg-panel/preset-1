@@ -20,15 +20,13 @@
       "sway-workspaces"
     ],
     "modules-center": [
+      "executor-cpuav-custom",
       "clock"
     ],
     "modules-right": [
-      "executor-cpuav",
-      "executor-cpubar",
       "sway-mode",
       "scratchpad",
       "tray",
-      "button-help",
       "button-clipman",
       "executor-keyboard"
     ],
@@ -152,7 +150,7 @@
     },
     "playerctl": {},
     "clock": {
-      "format": "%a, %d. %b  %H:%M:%S",
+      "format": "%a %d %b  %H:%M:%S",
       "interval": 1,
       "on-right-click": "",
       "tooltip-text": "",
@@ -206,6 +204,20 @@
       "terminal": "foot",
       "run-through-compositor": true
     },
+    "executor-cpuav-custom": {
+      "script": "gopsuinfo -c atmng -t",
+      "tooltip-text": "System info",
+      "on-left-click": "htop",
+      "on-middle-click": "",
+      "on-right-click": "",
+      "on-scroll-up": "",
+      "on-scroll-down": "",
+      "root-css-name": "",
+      "css-name": "custom-cpu",
+      "icon-placement": "right",
+      "icon-size": 16,
+      "interval": 3
+    },
     "executor-cpuav": {
       "script": "gopsuinfo -i a",
       "tooltip-text": "average CPU load",
@@ -229,9 +241,9 @@
       "on-scroll-up": "",
       "on-scroll-down": "",
       "root-css-name": "",
-      "css-name": "",
+      "css-name": "cpubars",
       "icon-placement": "left",
-      "icon-size": 16,
+      "icon-size": 10,
       "interval": 3
     },
     "dwl-tags": {},
@@ -307,23 +319,6 @@
       "angle": 0.0,
       "sigrt": 37,
       "use-sigrt": true
-    },
-    "executor-direct-keyboard": {
-      "script": "python -c 'from i3ipc import Connection;\ni3=Connection()\nprint(\"input-keyboard\")\nprint([item.xkb_active_layout_name for item in i3.get_inputs() if \"keyboard\" in item.identifier][0])'",
-      "tooltip-text": "input",
-      "on-left-click": "swaymsg input type:keyboard xkb_switch_layout next",
-      "on-middle-click": "",
-      "on-right-click": "",
-      "on-scroll-up": "",
-      "on-scroll-down": "",
-      "root-css-name": "",
-      "css-name": "",
-      "icon-placement": "left",
-      "icon-size": 16,
-      "interval": 1,
-      "angle": 0.0,
-      "sigrt": 34,
-      "use-sigrt": false
     }
   }
 ]
