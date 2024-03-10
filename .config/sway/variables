@@ -1,6 +1,7 @@
 set $term foot
 set $browser MOZ_ENABLE_WAYLAND=1 librewolf
 set $filemanager thunar
-set $editor emacs
+# Because somehow /etc/environment does not take effect on emacs
+set $editor /bin/fish -c emacs
 set $launcher nwg-drawer
 set $exit nwg-bar -p center -a middle -i 48 -s preset-1.css
