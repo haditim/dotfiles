@@ -1,7 +1,7 @@
 set $term foot
 set $browser MOZ_ENABLE_WAYLAND=1 librewolf
-set $filemanager thunar
+set $filemanager nautilus
 # Because somehow /etc/environment does not take effect on emacs
-set $editor /bin/fish -c emacs
-set $launcher nwg-drawer
-set $exit nwg-bar -p center -a middle -i 48 -s preset-1.css
+set $editor emacs
+set $launcher dmenu_path | dmenu | xargs swaymsg exec --
+set $exit echo "poweroff\nsuspend\nreboot" | dmenu | xargs systemctl --

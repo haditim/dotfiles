@@ -28,7 +28,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt share_history
 
 # Aliases
-alias dotfiles='/usr/bin/git --git-dir=/home/hadi/.dotfiles/ --work-tree=/home/hadi'
+alias dotfiles='/usr/bin/git --git-dir=/home/user/.dotfiles/ --work-tree=/home/user'
 
 ### Some more Docker aliases (others are covered by plugins)
 ## Processes

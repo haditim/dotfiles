@@ -1,5 +1,3 @@
-# The files we include below will be created / overwritten by nwg-shell tools
-#
 include variables
 include outputs
 include autostart
@@ -8,10 +6,6 @@ include keyboard
 include pointer
 include touchpad
 
-# nwg-shell sway config
-# Read `man 5 sway` for reference.
-
-# border & title
 for_window [title="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 default_border pixel 2
 default_floating_border pixel 4
@@ -43,11 +37,6 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec ~/.azotebg
 
-### Turn off screen on lid closed
-set $laptop eDP-1
-bindswitch lid:on output $laptop disable
-bindswitch lid:off output $laptop enable
-
 #############         Bindings           ##################
 
 # kill focused window
@@ -57,15 +46,13 @@ bindsym Mod1+F4 kill
 # core applications
 bindsym $Mod+Return       exec $term
 bindsym $Mod+Shift+Return exec $editor
-bindsym $Mod+Shift+p      exec nwg-shell-config
 bindsym $Mod+Shift+d      exec $dock
 bindsym $Mod+e            exec $filemanager
 bindsym $Mod+w            exec $browser
 bindsym $Mod+d            exec $launcher
 bindsym Mod1+F1           exec $launcher
 bindsym $Mod+c            exec swaync-client -t
-bindsym Mod1+c            exec nwg-clipman
-bindsym Mod1+Control+l    exec nwg-lock
+bindsym Mod1+Control+l    exec swaylock
 
 # Exit menu
 bindsym $Mod+x exec $exit
@@ -217,3 +204,17 @@ for_window [app_id="(?i)(?:firefox|chromium)"] border none
 for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
 
 popup_during_fullscreen smart
+
+bar {
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command i3status
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
