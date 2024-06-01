@@ -22,7 +22,7 @@ bindsym $Mod+e            exec $filemanager
 bindsym $Mod+w            exec $browser
 bindsym $Mod+d            exec $launcher
 bindsym Mod1+F2           exec $launcher
-bindsym $Mod+c            exec swaync-client -t
+bindsym $Mod+c            exec swaync-client -t -sw
 bindsym Mod1+Control+l    exec swaylock
 
 # Exit menu
@@ -83,7 +83,7 @@ bindsym $Mod+f floating toggle
 floating_modifier $Mod normal
 
 # Swap focus between the tiling area and the floating area
-bindsym $Mod+Shift+space focus mode_toggle
+bindsym $Mod+control+f focus mode_toggle
 
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
