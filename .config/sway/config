@@ -8,7 +8,7 @@ include touchpad
 include keybinds
 
 for_window [title="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
-default_border pixel 2
+default_border pixel 3
 default_floating_border pixel 4
 
 # gaps
