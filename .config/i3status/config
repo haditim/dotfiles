@@ -1,0 +1,70 @@
+general {
+    interval = 1
+    colors = true
+    color_good =     '#78da59'
+    color_degraded = '#ff7832'
+    color_bad =      '#ff367b'
+}
+
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "cpu_temperature 0"
+order += "load"
+order += "memory"
+order += "disk /"
+order += "battery all"
+order += "volume master"
+order += "tztime local"
+
+wireless _first_ {
+    format_up = " %quality %ip"
+    format_down = "󰖪"
+}
+
+ethernet _first_ {
+    # if you use %speed, i3status requires root privileges
+    format_up = "󰌗 %ip"
+    format_down = "󰌗 down"
+}
+
+memory {
+    format = "󰍛 %used/%total"
+}
+
+battery all {
+    format = "%status %percentage %remaining %emptytime"
+    format_down = "No battery"
+    status_chr = "⚡"
+    status_bat = "🔋"
+    status_unk = "?"
+    status_full = "☻ FULL"
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 10
+}
+
+tztime local {
+    format = "📅 %Y-%m-%d %H:%M:%S"
+}
+
+load {
+    format = "💻 %1min, %5min, %15min"
+}
+
+disk "/" {
+    format = "📁 %used/%total"
+}
+
+cpu_temperature 0 {
+    format= "🌡 %degrees °C"
+    max_threshold= 85
+    format_above_threshold="Warning T above threshold: %degrees °C"
+    path= "/sys/class/thermal/thermal_zone0/temp"
+}
+
+volume master {
+    format = "🔈%volume"
+    format_muted = "A: mute"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
