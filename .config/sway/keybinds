@@ -21,6 +21,7 @@ bindsym $Mod+Shift+d      exec $dock
 bindsym $Mod+e            exec $filemanager
 bindsym $Mod+w            exec $browser
 bindsym $Mod+d            exec $launcher
+bindsym $Mod+a            exec $anki
 bindsym Mod1+F2           exec $launcher
 bindsym $Mod+c            exec swaync-client -t -sw
 bindsym Mod1+Control+l    exec swaylock -f -c 000000

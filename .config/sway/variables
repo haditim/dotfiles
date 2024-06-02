@@ -1,7 +1,7 @@
 set $term foot
 set $browser MOZ_ENABLE_WAYLAND=1 librewolf
-set $filemanager nautilus
-# Because somehow /etc/environment does not take effect on emacs
+set $anki ANKI_WAYLAND=1 anki
+set $filemanager thunar
 set $editor emacs
 set $launcher dmenu_path | dmenu | xargs swaymsg exec --
 set $exit echo "poweroff\nsuspend\nreboot" | dmenu | xargs systemctl --
