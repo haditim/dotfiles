@@ -6,6 +6,7 @@ include keyboard
 include pointer
 include touchpad
 include keybinds
+include modes
 
 for_window [title="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 default_border pixel 3

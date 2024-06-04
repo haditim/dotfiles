@@ -1,0 +1,25 @@
+# Screenshot (taken from https://www.reddit.com/r/swaywm/comments/pdyx0w/comment/hau6yck/)
+set $screenshot 1 selected, 2 whole, 3 selected clipboard, 4 whole clipboard, 5 swappy
+mode "$screenshot" {
+    bindsym 1 exec 'grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +"%Y%m%d%H%M%S")_screenshot.png', mode "default"
+    bindsym 2 exec 'grim ~/Pictures/Screenshots/$(date +"%Y%m%d%H%M%S")_screenshot.png', mode "default"
+    bindsym 3 exec 'grim -g "$(slurp)" - | wl-copy', mode "default"
+    bindsym 4 exec 'grim - | wl-copy', mode "default"
+    bindsym 5 exec 'grim -g "$(slurp)" - | swappy -f -', mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $power 1 shutdown, 2 restart, 3 suspend, 4 lock
+mode "$power" {
+    bindsym 1 exec systemctl poweroff
+    bindsym 2 exec systemctl reboot
+    bindsym 3 exec swaylock -f -c 000000 & systemctl suspend
+    bindsym 4 exec swaylock -f -c 000000
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
