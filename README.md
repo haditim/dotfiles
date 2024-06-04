@@ -10,6 +10,9 @@ are already in place. The display config can be changed in
 `~/.config/sway/outputs` by running `swaymsg -t get_outputs` after wdisplays has
 the changes you'd want.
 
+## Requirements
+For sway config to work correctly, `swaync`, `swaylock`, `slurp`, `grim` should be installed.
+
 ## Set dark theme
 To set dark theme for both GTK and Qt run the following:
 ```shell
