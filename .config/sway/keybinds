@@ -25,6 +25,7 @@ bindsym $Mod+a            exec $anki
 bindsym Mod1+F2           exec $launcher
 bindsym $Mod+c            exec swaync-client -t -sw
 bindsym Mod1+Control+l    exec swaylock -f -c 000000
+bindsym $Mod+Shift+q      exec swaymsg -t get_tree | jq '.. | select(.type?) | select(.focused==true) | .pid' | xargs kill -9 --
 
 # Exit menu
 bindsym $Mod+x exec $exit
