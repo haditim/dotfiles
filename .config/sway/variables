@@ -4,6 +4,6 @@ set $anki ANKI_WAYLAND=1 anki
 set $filemanager thunar
 set $editor emacs
 set $launcher dmenu_path | dmenu | xargs swaymsg exec --
-set $exit echo "poweroff\nsuspend\nreboot" | dmenu | xargs systemctl --
+set $exit /home/$USER/.config/sway/lock_menu.sh
 set $idle 600
 set $dmps_off 660
