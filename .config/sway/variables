@@ -1,6 +1,5 @@
 set $term foot
 set $browser MOZ_ENABLE_WAYLAND=1 librewolf
-set $anki ANKI_WAYLAND=1 anki
 set $filemanager thunar
 set $editor emacs
 set $launcher dmenu_path | dmenu | xargs swaymsg exec --
