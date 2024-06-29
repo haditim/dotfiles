@@ -82,6 +82,9 @@ bindsym $Mod+Control+Left move workspace to output left
 bindsym $Mod+Control+Down move workspace to output down
 bindsym $Mod+Control+Up move workspace to output up
 
+# turn on laptop monitor for when sway fails to do so
+bindsym $Mod+m output $laptop enable
+
 # Scratchpad, Floating
 bindsym $Mod+f floating toggle
 floating_modifier $Mod normal
