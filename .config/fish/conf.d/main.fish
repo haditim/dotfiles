@@ -81,3 +81,30 @@ function mark_prompt_start --on-event fish_prompt
     echo -en "\e]133;A\e\\"
 end
 # direnv hook fish | source
+
+# C-x C-e to edit command in editor (similar to bash)
+function edit_command_buffer --description 'Edit the command buffer in an external editor'
+    set -l f (mktemp)
+    if set -q f[1]
+        mv $f $f.fish
+        set f $f.fish
+    else
+        # We should never execute this block but better to be paranoid.
+        set f /tmp/fish.(echo %self).fish
+        touch $f
+    end
+
+    set -l p (commandline -C)
+    commandline -b > $f
+    if set -q EDITOR
+        eval $EDITOR $f
+    else
+        vim $f
+    end
+
+    commandline -r (cat $f)
+    commandline -C $p
+    command rm $f
+end
+
+bind \cx\ce edit_command_buffer
