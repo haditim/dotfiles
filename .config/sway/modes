@@ -13,10 +13,10 @@ mode "$screenshot" {
 
 set $power 1 shutdown, 2 restart, 3 suspend, 4 lock
 mode "$power" {
-    bindsym 1 exec systemctl poweroff
-    bindsym 2 exec systemctl reboot
-    bindsym 3 exec swaylock -f -c 000000 & systemctl suspend
-    bindsym 4 exec swaylock -f -c 000000
+    bindsym 1 exec systemctl poweroff, mode "default"
+    bindsym 2 exec systemctl reboot, mode "default"
+    bindsym 3 exec swaylock -f -c 000000 & systemctl suspend, mode "default"
+    bindsym 4 exec swaylock -f -c 000000, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
