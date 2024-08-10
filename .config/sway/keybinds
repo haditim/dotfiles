@@ -82,6 +82,10 @@ bindsym $Mod+Control+Left move workspace to output left
 bindsym $Mod+Control+Down move workspace to output down
 bindsym $Mod+Control+Up move workspace to output up
 
+# move current workspace to another monitor
+bindsym $Mod+greater move workspace to output right
+bindsym $Mod+less move workspace to output left
+
 # turn on laptop monitor for when sway fails to do so
 bindsym $Mod+m output $laptop enable
 
