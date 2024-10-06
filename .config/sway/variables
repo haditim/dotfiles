@@ -1,10 +1,11 @@
 set $term foot
 set $browser MOZ_ENABLE_WAYLAND=1 librewolf
+set $tor-browser MOZ_ENABLE_WAYLAND=1 torbrowser-launcher
 set $filemanager thunar
 set $editor emacs
 set $launcher dmenu_path | dmenu | xargs swaymsg exec --
-set $idle 600
-set $dmps_off 660
+set $idle 60
+set $dmps_off 66
 set $lock swaylock -f -c 000000
 set $force_close swaymsg -t get_tree | jq '.. | select(.type?) | select(.focused==true) | .pid' | xargs kill -9 --
 set $notifications swaync-client -t -sw
