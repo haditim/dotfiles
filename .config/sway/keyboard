@@ -5,6 +5,6 @@ input "type:keyboard" {
   repeat_rate 40
   xkb_capslock disabled
   xkb_numlock enabled
-  xkb_options "grp:win_space_toggle"
+  xkb_options "grp:win_space_toggle,compose:rwin"
   # xkb_options "ctrl:nocaps,grp:win_space_toggle"
 }
