@@ -1,6 +1,7 @@
 # Env variables needed for wayland and sway
 set -Ux XDG_CURRENT_DESKTOP sway
 set -Ux XDG_SESSION_DESKTOP sway
+set -Ux XDG_RUNTIME_DIR /run/user/$(id -u)
 set -Ux ANKI_WAYLAND 1
 set -Ux MOZ_ENABLE_WAYLAND 1
 set -Ux QT_WAYLAND_DISABLE_WINDOWDECORATION 1

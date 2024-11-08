@@ -13,5 +13,5 @@ input "type:touchpad" {
 }
 
 # only works on Sway 1.8+ (not on debian stable yet)
-#bindgesture swipe:3:right workspace prev
-#bindgesture swipe:3:left workspace next
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left workspace next

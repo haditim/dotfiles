@@ -1,11 +1,13 @@
 NOTE: this repo is now hosted mainly on [Codeberg](https://codeberg.org/haditim/dotfiles) and [GitHub](https://github.com/haditim/dotfiles) serves as its mirror.
 
 # dot files
-These are my personal dotfiles.
+These are my personal dotfiles for a light-weight desktop environment with
+Sway. The config is tested with Debian, Void and Arch GNU/Linux distros as well
+as  FreeBSD and OpenBSD.
 
 # sway
 Install `sway swaybg swayidle swaylock` (and `pipewire pipewire-alsa
-pipewire-pulse wireplumber`) as well as `i3status` for a minimal setup. Settings
+pipewire-pulse wireplumber xdg-desktop-portal-wlr`) as well as `i3status` for a minimal setup. Settings
 are already in place. The display config can be changed in
 `~/.config/sway/outputs` by running `swaymsg -t get_outputs` after wdisplays has
 the changes you'd want.
@@ -23,22 +25,33 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 # gsettings set org.gnome.desktop.interface gtk-theme 'Breeze'
 ```
 
-# shell
-In Arch Linux you can change the shell with `chsh -s /usr/bin/fish`.
-
 ## fish
 I currently use fish as my main shell. It is set up to support vterm inside
 emacs with starship. My aliases and functions are also included in the
 config. If you need to move your zsh history to shell, you can use
 [zsh-history-to-fish](https://pypi.org/project/zsh-history-to-fish/).
 
+### shell
+Default shell can be changed by `chsh -s /usr/bin/fish`.
+
 ## Starship
-install Starship for a nice prompt while keeping zsh plugins/fish/vterm working
-From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy starship` if you're on Arch (BTW).
+Install Starship for a nice prompt while keeping zsh plugins/fish/vterm working
+From [Starship website](https://starship.rs/) or just run `sudo pacman -Sy
+starship` if you're on Arch (BTW). If starship is not desired, the entry form
+the following lines from the file `~/.config/fish/conf.d/main.fish`.
+
+```shell
+# Run Starship (before emacs)
+starship init fish | source
+```
 
 ## Stop annoyances when using X11 over SSH (only for Gnome desktop)
 
-Delay the time for an app to actually not respond and Gnome showing `"Application" is not responding.`. This is very important if you run any X11 forwarding over SSH. Taken from [askubuntu](https://askubuntu.com/questions/1068921/how-to-disable-the-window-not-responding-dialog). Also don't forget to have `xorg-x11-xauth` installed.
+Delay the time for an app to actually not respond and Gnome showing
+`"Application" is not responding.`. This is very important if you run any X11
+forwarding over SSH. Taken from
+[askubuntu](https://askubuntu.com/questions/1068921/how-to-disable-the-window-not-responding-dialog). Also
+don't forget to have `xorg-x11-xauth` installed.
 
 ``` shell
 # for a 60s delay
@@ -48,18 +61,13 @@ gsettings set org.gnome.mutter check-alive-timeout 60000
 # emacs
 My main emacs configuration can be found in [my dotemacs
 repository](https://codeberg.org/haditim/dotemacs) which can be cloned to
-`.config/emacs`. I also use other configs from time to time, for which I set
-another directory. For example, Doom Emacs can be used by cloning it into a
-directory inside `.config`:
-
-``` shell
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.config/doomemacs
-```
-Then be used like `DOOMDIR=~/.config/doom emacs --init-directory ~/.config/doomemacs` (given that you have your doom config in the `~/.config/doom`, look at my [Doom emacs configuration](https://codeberg.org/haditim/.doom.d "doom configs") that you can clone there). I used to use [Chemacs2](https://github.com/plexus/chemacs2) that is not needed from emacs version 29.
-
+`.config/emacs`.
 
 # how to use
-I use something like the following to track my changes on dot files (mostly taken from [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b) page).
+I use something like the following to track my changes on dot files (mostly
+taken from
+[this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
+page).
 
 ## new setup
 This repo is setup like following (for reference).

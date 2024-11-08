@@ -13,9 +13,20 @@ mode "$screenshot" {
 
 set $power 1 shutdown, 2 restart, 3 suspend, 4 lock
 mode "$power" {
-    bindsym 1 exec systemctl poweroff, mode "default"
-    bindsym 2 exec systemctl reboot, mode "default"
-    bindsym 3 exec swaylock -f -c 000000 & systemctl suspend, mode "default"
+    # For systemd systems
+    # bindsym 1 exec systemctl poweroff, mode "default"
+    # bindsym 2 exec systemctl reboot, mode "default"
+    # bindsym 3 exec swaylock -f -c 000000 & systemctl suspend, mode "default"
+
+    # For runit systems
+    # make sure the following is added to sudoers
+    # user ALL=NOPASSWD:/sbin/reboot
+    # user ALL=NOPASSWD:/sbin/shutdown
+    # user ALL=NOPASSWD:/sbin/zzz
+    bindsym 1 exec sudo shutdown -h now, mode "default"
+    bindsym 2 exec sudo reboot, mode "default"
+    bindsym 3 exec swaylock -f -c 000000 & sudo zzz, mode "default"
+
     bindsym 4 exec swaylock -f -c 000000, mode "default"
 
     # back to normal: Enter or Escape
