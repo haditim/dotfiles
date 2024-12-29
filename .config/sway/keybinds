@@ -26,6 +26,7 @@ bindsym Mod1+F2           exec $launcher
 bindsym $Mod+c            exec $notifications
 bindsym Mod1+Control+l    exec $lock
 bindsym $Mod+Shift+q      exec $force_close
+bindsym $Mod+v            exec $sound
 
 # Exit menu
 bindsym $Mod+x mode "$power"

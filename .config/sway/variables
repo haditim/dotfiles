@@ -3,6 +3,7 @@ set $browser MOZ_ENABLE_WAYLAND=1 librewolf
 set $tor-browser MOZ_ENABLE_WAYLAND=1 torbrowser-launcher
 set $filemanager thunar
 set $editor emacs
+set $sound pavucontrol
 set $launcher dmenu_path | dmenu | xargs swaymsg exec --
 set $idle 60
 set $dmps_off 66
