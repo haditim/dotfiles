@@ -1,3 +1,4 @@
 # swaymsg -t get_outputs
+output HDMI-A-1 scale 1.25
 output DP-1 scale 1.25
 output eDP-1 scale 1.10
