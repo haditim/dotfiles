@@ -17,18 +17,18 @@ order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-    format_up = " %quality %ip"
-    format_down = "󰖪"
+    format_up = "🛜 %quality %ip"
+    format_down = "❌"
 }
 
 ethernet _first_ {
     # if you use %speed, i3status requires root privileges
-    format_up = "󰌗 %ip"
-    format_down = "󰌗 down"
+    format_up = "🌐 %ip"
+    format_down = "❌ down"
 }
 
 memory {
-    format = "󰍛 %used/%total"
+    format = "🇲 %used/%total"
 }
 
 battery all {
@@ -55,9 +55,11 @@ disk "/" {
 }
 
 cpu_temperature 0 {
-    format= "🌡 %degrees °C"
+    format= "🌡️ %degrees °C"
     max_threshold= 85
     format_above_threshold="Warning T above threshold: %degrees °C"
+    # for freebsd, add `coretemp_load="YES"` to /boot/loader.conf
+    # path= "sysctl -n dev.cpu.0.temperature"
     path= "/sys/class/thermal/thermal_zone0/temp"
 }
 
