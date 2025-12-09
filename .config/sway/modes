@@ -23,9 +23,9 @@ mode "$power" {
     # user ALL=NOPASSWD:/sbin/reboot
     # user ALL=NOPASSWD:/sbin/shutdown
     # user ALL=NOPASSWD:/sbin/zzz
-    bindsym 1 exec sudo shutdown -h now, mode "default"
-    bindsym 2 exec sudo reboot, mode "default"
-    bindsym 3 exec swaylock -f -c 000000 & sudo zzz, mode "default"
+    bindsym 1 exec doas /sbin/shutdown -h now
+    bindsym 2 exec doas /sbin/reboot
+    bindsym 3 exec swaylock -f -c 000000 & doas pm-suspend mode "default"
 
     bindsym 4 exec swaylock -f -c 000000, mode "default"
 

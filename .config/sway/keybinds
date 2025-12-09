@@ -47,8 +47,8 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
 
 # backlight (install program `light`)
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 
 # Reload the configuration file
 bindsym $Mod+Shift+c reload
@@ -163,3 +163,6 @@ bindsym $Mod+b border toggle
 
 # until there is a real switch window in Sway
 bindsym Mod1+tab workspace next_on_output
+
+bindswitch lid:on exec swaylock -f -c 000000 & doas pm-suspend
+bindswitch --locked lid:on exec echo "not suspending"
