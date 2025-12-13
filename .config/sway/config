@@ -48,7 +48,7 @@ bar {
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
-    font pango:Iosevka Comfy 10
+    font pango:Iosevka Comfy 12
     separator_symbol "󰇝"
     height 25
 }

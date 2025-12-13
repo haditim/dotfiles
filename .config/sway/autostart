@@ -10,7 +10,8 @@ exec swayidle -w \
 
 exec swaync
 
-# pipewire stuff
+# pipewire/bluetooth stuff
 exec /usr/bin/daemon --bind --respawn --pidfiles=$XDG_RUNTIME_DIR --name=pipewire /usr/bin/pipewire
 exec /usr/bin/daemon --bind --respawn --pidfiles=$XDG_RUNTIME_DIR --name=pipewire-pulse /usr/bin/pipewire-pulse
-exec /usr/bin/daemon --bind --respawn --pidfiles=$XDG_RUNTIME_DIR --name=pipewire-wireplumber /usr/bin/wireplumber
+# exec /usr/bin/daemon --bind --respawn --pidfiles=$XDG_RUNTIME_DIR --name=pipewire-wireplumber /usr/bin/wireplumber
+exec /usr/bin/daemon --bind --respawn --pidfiles=$XDG_RUNTIME_DIR --name=blueman-applet /usr/bin/blueman-applet

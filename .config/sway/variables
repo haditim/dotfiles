@@ -2,7 +2,7 @@ set $term foot
 set $browser MOZ_ENABLE_WAYLAND=1 librewolf
 set $tor-browser MOZ_ENABLE_WAYLAND=1 torbrowser-launcher
 set $filemanager thunar
-set $editor emacs
+set $editor GDK_BACKEND=x11 emacs
 set $sound pavucontrol
 set $launcher fuzzel
 set $idle 60
