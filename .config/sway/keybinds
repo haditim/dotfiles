@@ -27,6 +27,7 @@ bindsym $Mod+c            exec $notifications
 bindsym Mod1+Control+l    exec $lock
 bindsym $Mod+Shift+q      exec $force_close
 bindsym $Mod+v            exec $sound
+bindsym $Mod+b            exec $bluetooth
 
 # Exit menu
 bindsym $Mod+x mode "$power"
@@ -159,7 +160,7 @@ bindsym $Mod+Shift+f fullscreen
 ###############      Border & Gaps     ###############
 
 # changing border style
-bindsym $Mod+b border toggle
+bindsym $Mod+Shift+b border toggle
 
 # until there is a real switch window in Sway
 bindsym Mod1+tab workspace next_on_output
