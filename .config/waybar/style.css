@@ -10,6 +10,8 @@
 @define-color cyan #7dcfff;
 @define-color white #a9b1d6;
 @define-color orange #ff9e64;
+@define-color brown #8b4513;
+@define-color pink #ff1493;
 
 @define-color workspaces-color @foreground;
 @define-color workspaces-focused-bg @green;
@@ -24,7 +26,7 @@
 @define-color clock-color @blue;
 @define-color cpu-color @green;
 @define-color memory-color @magenta;
-@define-color language-color @orange;
+@define-color language-color @white;
 @define-color temperature-color @yellow;
 @define-color temperature-critical-color @red;
 @define-color battery-color @cyan;
@@ -32,6 +34,8 @@
 @define-color battery-warning-color @yellow;
 @define-color battery-critical-color @red;
 @define-color network-color @blue;
+@define-color network-wifi-color @white;
+@define-color network-wifi-disconnected-color @white;
 @define-color network-disconnected-color @red;
 @define-color pulseaudio-color @orange;
 @define-color pulseaudio-muted-color @red;
@@ -192,10 +196,18 @@ window#waybar.solo {
     color: @network-color;
     border-bottom-color: @network-color;
 }
-
 #network.disconnected {
     color: @network-disconnected-color;
     border-bottom-color: @network-disconnected-color;
+}
+
+#network.wifi {
+    color: @network-wifi-color;
+    border-bottom-color: @network-wifi-color;
+}
+#network.wifi.disconnected {
+    color: @network-wifi-disconnected-color;
+    border-bottom-color: @network-wifi-disconnected-color;
 }
 
 #pulseaudio {
