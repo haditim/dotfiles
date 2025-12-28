@@ -8,11 +8,11 @@
     // Choose the order of the modules
     "modules-left": [
         "sway/workspaces",
-        "sway/mode",
         "sway/scratchpad",
         "sway/window"
     ],
     "modules-center": [
+        "sway/mode",
     ],
     "modules-right": [
         "idle_inhibitor",
@@ -55,6 +55,10 @@
             "locked": "",
             "unlocked": ""
         }
+    },
+    "sway/language": {
+        "format": "{flag}",
+        "tooltip-format": "{flag} {short} {variant}",
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"

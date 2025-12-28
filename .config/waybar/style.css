@@ -155,6 +155,7 @@ window#waybar.solo {
 #language {
     color: @language-color;
     border-bottom-color: @language-color;
+    min-width: 20px;
 }
 
 #temperature {
