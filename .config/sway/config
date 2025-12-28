@@ -1,13 +1,4 @@
-include variables
-include outputs
-include autostart
-include workspaces
-include keyboard
-include pointer
-include touchpad
-include keybinds
-include modes
-
+# borders
 for_window [title="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 default_border pixel 3
 default_floating_border pixel 4
@@ -20,35 +11,5 @@ smart_gaps on
 # font
 font pango:monospace 11
 
-###############     Autostart      ##################
-
-exec pipewire
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec ~/.azotebg
-
-############    application settings   ############
-
-# focus, floating, & sticky
-for_window [app_id="(?i)(?:blueman-manager|azote|gnome-disks|mpv)"] floating enable
-for_window [app_id="(?i)(?:pavucontrol|nm-connection-editor|gsimplecal|galculator)"] floating enable
-for_window [app_id="(?i)(?:firefox|chromium)"] border none
-for_window [title="(?i)(?:copying|deleting|moving)"] floating enable
-
-popup_during_fullscreen smart
-
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command i3status
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-    font pango:Iosevka Comfy 12
-    separator_symbol "󰇝"
-    height 25
-}
+# include all other in config.d dir
+include ${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf
