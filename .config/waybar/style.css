@@ -79,6 +79,12 @@ window#waybar.solo {
     border-bottom: 2px solid transparent;
     background-color: transparent;
 }
+#mode:hover, #mpd:hover, #custom-weather:hover, #custom-playerctl:hover, #clock:hover, #cpu:hover,
+#memory:hover, #temperature:hover, #battery:hover, #network:hover, #pulseaudio:hover,
+#backlight:hover, #disk:hover, #custom-uptime:hover, #custom-updates:hover, #custom-quote,
+#idle_inhibitor:hover, #tray:hover, #language:hover {
+    background: @background-light;
+}
 
 #workspaces button {
     padding: 0 10px;
