@@ -11,8 +11,5 @@ smart_gaps on
 # font
 font pango:monospace 11
 
-# background
-output * bg /usr/share/backgrounds/default.jxl fill
-
 # include all other in config.d dir
 include ${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf
