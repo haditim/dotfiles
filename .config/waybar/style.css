@@ -34,14 +34,11 @@
 @define-color battery-warning-color @yellow;
 @define-color battery-critical-color @red;
 @define-color network-color @blue;
-@define-color network-wifi-color @white;
-@define-color network-wifi-disconnected-color @white;
-@define-color network-disconnected-color @red;
 @define-color pulseaudio-color @orange;
 @define-color pulseaudio-muted-color @red;
 @define-color backlight-color @yellow;
 @define-color disk-color @cyan;
-@define-color uptime-color @green;
+@define-color uptime-color @white;
 @define-color updates-color @orange;
 @define-color quote-color @green;
 @define-color idle-inhibitor-color @foreground;
@@ -197,17 +194,10 @@ window#waybar.solo {
     border-bottom-color: @network-color;
 }
 #network.disconnected {
-    color: @network-disconnected-color;
-    border-bottom-color: @network-disconnected-color;
-}
-
-#network.wifi {
-    color: @network-wifi-color;
-    border-bottom-color: @network-wifi-color;
-}
-#network.wifi.disconnected {
-    color: @network-wifi-disconnected-color;
-    border-bottom-color: @network-wifi-disconnected-color;
+    margin: 0px;
+    padding: 0px;
+    font-size: 0px;
+    border: 0px;
 }
 
 #pulseaudio {
