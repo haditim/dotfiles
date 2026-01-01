@@ -11,5 +11,7 @@ set -Ux ECORE_EVAS_ENGINE wayland_egl
 set -Ux ELM_ENGINE wayland_wgl
 set -Ux SDL_VIDEODRIVER wayland
 set -Ux _JAVA_AWT_WM_NONREPARENTING 1
+set -Ux ANDROID_HOME $HOME/opt/Android/sdk
 
 set -Ux fish_user_paths $HOME/.local/bin $fish_user_paths
+set -Ux fish_user_paths $ANDROID_HOME/cmdline-tools/bin $fish_user_paths
