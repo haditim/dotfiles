@@ -27,6 +27,7 @@
 @define-color weather-color @mistyRose;
 @define-color playerctl-color @magenta;
 @define-color clock-color @blue;
+@define-color tray-color @white;
 @define-color cpu-color @green;
 @define-color memory-color @magenta;
 @define-color language-color @white;
@@ -256,8 +257,7 @@ window#waybar.solo {
 
 #tray {
     background-color: transparent;
-    padding: 0 10px;
-    margin: 0 2px;
+    border-bottom-color: @tray-color;
 }
 
 #tray > .passive {
