@@ -92,7 +92,7 @@ done
 # Ignores all other kinds of parallel or nested sessions
 # (Sway on Gnome/KDE/X11/etc.), as the only way to detect these is to check
 # for (WAYLAND_)?DISPLAY and that is know to be broken on Arch.
-if systemctl --user -q is-active "$SESSION_TARGET"; then
+if pidof systemd && systemctl --user -q is-active "$SESSION_TARGET"; then
     echo "Another session found; refusing to overwrite the variables"
     exit 1
 fi
@@ -105,13 +105,12 @@ if hash dbus-update-activation-environment 2>/dev/null; then
     # shellcheck disable=SC2086
     dbus-update-activation-environment --systemd ${VARIABLES:- --all}
 fi
-
 # reset failed state of all user units
-systemctl --user reset-failed
+pidof systemd && systemctl --user reset-failed
 
 # shellcheck disable=SC2086
-systemctl --user import-environment $VARIABLES
-systemctl --user start "$SESSION_TARGET"
+pidof systemd && systemctl --user import-environment $VARIABLES
+pidof systemd && systemctl --user start "$SESSION_TARGET"
 
 # Optionally, wait until the compositor exits and cleanup variables and services.
 if [ -z "$WITH_CLEANUP" ] ||
@@ -124,10 +123,10 @@ fi
 # declare cleanup handler and run it on script termination via kill or Ctrl-C
 session_cleanup () {
     # stop the session target and unset the variables
-    systemctl --user start --job-mode=replace-irreversibly "$SESSION_SHUTDOWN_TARGET"
+    pidof systemd && systemctl --user start --job-mode=replace-irreversibly "$SESSION_SHUTDOWN_TARGET"
     if [ -n "$VARIABLES" ]; then
         # shellcheck disable=SC2086
-        systemctl --user unset-environment $VARIABLES
+        pidof systemd && systemctl --user unset-environment $VARIABLES
     fi
 }
 trap session_cleanup INT TERM

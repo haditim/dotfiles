@@ -51,9 +51,9 @@
 * {
     border: none;
     border-radius: 0;
-    font-size: 0.96em;
     min-height: 0;
     font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 0.97em;
 }
 
 window#waybar {
@@ -258,6 +258,7 @@ window#waybar.solo {
 #tray {
     background-color: transparent;
     border-bottom-color: @tray-color;
+    font-size: 1.2em;
 }
 
 #tray > .passive {

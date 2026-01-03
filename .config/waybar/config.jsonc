@@ -141,7 +141,7 @@
     },
     "disk": {
         "interval": 30,
-        "format": "{specific_used:0.0f}/{specific_total:0.0f} G ({percentage_used}%) 🖴",
+        "format": "{specific_used:0.0f}/{specific_total:0.0f} G ({percentage_used}%) 󰋊",
         "unit": "GB"
     },
     "memory": {
@@ -155,7 +155,7 @@
         "critical-threshold": 60,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -164,18 +164,19 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 90,
             "warning": 30,
             "critical": 15
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "interval": 10,
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -192,7 +193,7 @@
       }
     },
     "network#lan": {
-        "interface": "enp*",
+        "interface": "e*",
         "format-ethernet": "{ifname} 󰈀",
         "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected 󰖪",
@@ -200,7 +201,7 @@
         "tooltip-format": "{ifname}: {ipaddr}",
     },
     "network#wifi": {
-        "interface": "wlp*",
+        "interface": "wl*",
         "format-wifi": "󰖩 {essid} ({signalStrength}%)",
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": "󰖪 Disconnected",
@@ -212,7 +213,7 @@
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "󰝟 {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
