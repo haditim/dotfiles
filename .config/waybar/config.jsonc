@@ -16,7 +16,6 @@
     ],
     "modules-right": [
         "idle_inhibitor",
-        "pulseaudio",
         "mpd",
         "network#lan",
         "network#wifi",
@@ -25,11 +24,12 @@
         "disk",
         "memory",
         "temperature",
-        "backlight",
         "sway/language",
         "keyboard-state",
         "battery",
         "custom/weather",
+        "pulseaudio",
+        "backlight",
         "custom/uptime",
         "clock",
         "tray"
@@ -117,7 +117,8 @@
         // }
     },
     "clock": {
-        "format": "{:%Y.%m.%d %a %H:%M:%S}  ",
+        "format": "{:%H:%M:%S} ",
+        "format-alt": "{:%Y.%m.%d %a %H:%M:%S} ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1,
         "calendar": {
@@ -202,9 +203,9 @@
     },
     "network#wifi": {
         "interface": "wl*",
-        "format-wifi": "󰖩 {essid} ({signalStrength}%)",
-        "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": "󰖪 Disconnected",
+        "format-wifi": "{essid} ({signalStrength}%) 󰖩",
+        "format-linked": "{ifname} (No IP) 󰈀",
+        "format-disconnected": "Disconnected 󰖪",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{ifname}: {ipaddr}",
     },
