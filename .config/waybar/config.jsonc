@@ -138,7 +138,7 @@
         "interval": 2,
         "format": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-        "on-click": "foot --app-id=floating -e htop"
+        "on-click": "foot --app-id=floating -e htop -s PERCENT_CPU"
     },
     "disk": {
         "interval": 30,
@@ -148,7 +148,7 @@
     "memory": {
         "format": "{used:0.1f}/{total:0.1f} G ({percentage}%) ",
         "interval": 5,
-        "on-click": "foot --app-id=floating -e htop"
+        "on-click": "foot --app-id=floating -e htop -s PERCENT_MEM"
     },
     "temperature": {
         "thermal-zone": 3,
