@@ -237,7 +237,7 @@
     },
     "custom/uptime": {
         "format": "{} 󰔟",
-        "exec": "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ hour/h/; s/ day/d/; s/ minutes/m/; s/ minute/m/; s/,//g;'",
+        "exec": "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ hour/h/; s/ day/d/; s/ minutes/m/; s/ minute/m/; s/,//g; s/ week/w/g; s/ weeks/w/g; s/ month/M/g; s/ months/M/g;'",
         "interval": 60
     },
 }
