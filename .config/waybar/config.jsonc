@@ -151,7 +151,7 @@
         "on-click": "foot --app-id=floating -e htop -s PERCENT_MEM"
     },
     "temperature": {
-        "thermal-zone": 3,
+        // "thermal-zone": 3,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 60,
         // "format-critical": "{temperatureC}°C {icon}",
@@ -237,7 +237,7 @@
     },
     "custom/uptime": {
         "format": "{} 󰔟",
-        "exec": "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ hour/h/; s/ day/d/; s/ minutes/m/; s/ minute/m/; s/,//g; s/ week/w/g; s/ weeks/w/g; s/ month/M/g; s/ months/M/g;'",
+        "exec": "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ hour/h/; s/ day/d/; s/ minutes/m/; s/ minute/m/; s/,//g; s/ weeks/w/g; s/ week/w/g; s/ months/M/g; s/ month/M/g;'",
         "interval": 60
     },
 }
