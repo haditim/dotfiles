@@ -120,7 +120,7 @@
     },
     "cpu": {
         "interval": 2,
-        "format": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
+        "format": "{load} {icon0}{icon1}{icon2}{icon3} {usage:>2}% {avg_frequency:.1f}GHz ",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "on-click": "foot --app-id=floating -e htop -s PERCENT_CPU"
     },
