@@ -24,6 +24,9 @@ as  FreeBSD and OpenBSD.
   - `intel-media-driver` for vaapi video hardware acceleration on intel
 - Terminal
   - `foot`, `fish`, `starship`
+- Display manager
+  - `sddm` (optional): if not installed, run sway with command `dbus-run-session
+    sway` for screen sharing to work
 
 ### Post installation steps
 
