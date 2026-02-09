@@ -5,15 +5,24 @@ These are my personal dotfiles for a light-weight desktop environment with
 Sway. The config is tested with Debian, Void and Arch GNU/Linux distros as well
 as  FreeBSD and OpenBSD.
 
+## Requirements
+
+- Sway
+  - `swaync`, `swaylock`, `swayidle`, `slurp`, `grim`, `cliphist`, `pcmanfm`,
+    `rofi`, `lxqt-policykit`, `lxappearance`
+- Waybar
+  - `udiskie`, `network-manager-applet`, `htop`, `noto-fonts`, `noto-fonts-emoji`
+- Audio
+  - `pipewire`, `wireplumber`, `pipewire-pulse`, `pipewire-alsa`, `bluez`, `blueman`
+- Terminal
+  - `fish`, `starship`
+
 # sway
 Install `sway swaybg swayidle swaylock` (and `pipewire pipewire-alsa
 pipewire-pulse wireplumber xdg-desktop-portal-wlr`) as well as `i3status` for a minimal setup. Settings
 are already in place. The display config can be changed in
 `~/.config/sway/outputs` by running `swaymsg -t get_outputs` after wdisplays has
 the changes you'd want.
-
-## Requirements
-For sway config to work correctly, `swaync`, `swaylock`, `slurp`, `grim` should be installed.
 
 ## Set dark theme
 To set dark theme for both GTK and Qt run the following:
@@ -25,13 +34,13 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 # gsettings set org.gnome.desktop.interface gtk-theme 'Breeze'
 ```
 
-## fish
+# fish
 I currently use fish as my main shell. It is set up to support vterm inside
 emacs with starship. My aliases and functions are also included in the
 config. If you need to move your zsh history to shell, you can use
 [zsh-history-to-fish](https://pypi.org/project/zsh-history-to-fish/).
 
-### shell
+## shell
 Default shell can be changed by `chsh -s /usr/bin/fish`.
 
 ## Starship
@@ -58,7 +67,13 @@ don't forget to have `xorg-x11-xauth` installed.
 gsettings set org.gnome.mutter check-alive-timeout 60000
 ```
 
+# Waybar
+
+Waybar uses noto sans mono font. Install `noto-fonts-emoji` package for all
+icons to show correctly.
+
 # emacs
+
 My main emacs configuration can be found in [my dotemacs
 repository](https://codeberg.org/haditim/dotemacs) which can be cloned to
 `.config/emacs`.
