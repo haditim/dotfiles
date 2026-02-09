@@ -77,7 +77,7 @@ window#waybar.solo {
 #mode, #mpd, #custom-weather, #custom-playerctl, #clock, #cpu,
 #memory, #temperature, #battery, #network, #pulseaudio,
 #backlight, #disk, #custom-uptime, #custom-updates, #custom-quote,
-#idle_inhibitor, #tray, #language {
+#idle_inhibitor, #tray, #language, #custom-clipboard {
     padding: 0 10px;
     margin: 0;
     border-bottom: 1px solid transparent;
@@ -86,7 +86,7 @@ window#waybar.solo {
 #mode:hover, #mpd:hover, #custom-weather:hover, #custom-playerctl:hover, #clock:hover, #cpu:hover,
 #memory:hover, #temperature:hover, #battery:hover, #network:hover, #pulseaudio:hover,
 #backlight:hover, #disk:hover, #custom-uptime:hover, #custom-updates:hover, #custom-quote,
-#idle_inhibitor:hover, #tray:hover, #language:hover {
+#idle_inhibitor:hover, #tray:hover, #language:hover, #custom-clipboard:hover {
     background: @background-light;
 }
 
@@ -129,6 +129,11 @@ window#waybar.solo {
 }
 
 #custom-weather {
+    color: @weather-color;
+    border-bottom-color: @weather-color;
+}
+
+#custom-clipboard {
     color: @weather-color;
     border-bottom-color: @weather-color;
 }

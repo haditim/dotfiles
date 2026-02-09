@@ -25,11 +25,12 @@
         "memory",
         "temperature",
         "sway/language",
-        "keyboard-state",
+        // "keyboard-state",
         "battery",
         "custom/weather",
         "pulseaudio",
         "backlight",
+        "custom/clipboard",
         "custom/uptime",
         "clock",
         "tray"
@@ -222,5 +223,16 @@
         "format": "{} 󰔟",
         "exec": "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ hour/h/; s/ day/d/; s/ minutes/m/; s/ minute/m/; s/,//g; s/ weeks/w/g; s/ week/w/g; s/ months/M/g; s/ month/M/g;'",
         "interval": 60
+    },
+    "custom/clipboard": {
+        "format": "",
+        "interval": "once",
+        "return-type": "json",
+        "on-click": "swaymsg -q exec '$clipboard'; waybar-signal clipboard",
+        "on-click-right": "swaymsg -q exec '$clipboard-del'; waybar-signal clipboard",
+        "on-click-middle": "rm -f ~/.cache/cliphist/db; waybar-signal clipboard",
+        "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)'",
+        "exec-if": "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]",
+        "signal": 9
     },
 }
