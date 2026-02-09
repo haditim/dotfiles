@@ -7,15 +7,33 @@ as  FreeBSD and OpenBSD.
 
 ## Requirements
 
+### Packages
+
 - Sway
   - `swaync`, `swaylock`, `swayidle`, `slurp`, `grim`, `cliphist`, `pcmanfm`,
     `rofi`, `lxqt-policykit`, `lxappearance`
-- Waybar
-  - `udiskie`, `network-manager-applet`, `htop`, `noto-fonts`, `noto-fonts-emoji`
+- Menu bar
+  - Waybar
+    - `udiskie`, `network-manager-applet`, `htop`, `noto-fonts`, `noto-fonts-emoji`
+  - or i3status
 - Audio
   - `pipewire`, `wireplumber`, `pipewire-pulse`, `pipewire-alsa`, `bluez`, `blueman`
+- Screen sharing
+  - `xdg-desktop-portal-wlr`, `xdg-user-dirs`
+- mpv
+  - `intel-media-driver` for vaapi video hardware acceleration on intel
 - Terminal
-  - `fish`, `starship`
+  - `foot`, `fish`, `starship`
+
+### Post installation steps
+
+Make sure `pipewire`, `pipewire-pulse`, `wireplumber` and `bluetoothd` run as
+user services. This can be achieved on OpenRC by `rc-update add -U <service>
+default` run for each service. For systemd these usually get added automatically.
+
+#### Test WebRTC screen sharing
+
+Screen sharing can be tested via [WebRTC test landing page](https://mozilla.github.io/webrtc-landing/).
 
 # sway
 Install `sway swaybg swayidle swaylock` (and `pipewire pipewire-alsa
