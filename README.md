@@ -1,9 +1,19 @@
 NOTE: this repo is now hosted mainly on [Codeberg](https://codeberg.org/haditim/dotfiles) and [GitHub](https://github.com/haditim/dotfiles) serves as its mirror.
 
 # dot files
+
 These are my personal dotfiles for a light-weight desktop environment with
-Sway. The config is tested with Debian, Void and Arch GNU/Linux distros as well
-as  FreeBSD and OpenBSD.
+Sway. The config is tested with Debian, Arch, Artix and Void GNU/Linux distros
+using Systemd or OpenRC as well as FreeBSD and OpenBSD although in distros or
+OSs other than Debian, Arch, Artix some adjustments may be needed to get
+everything working.
+
+I put a strong emphasis on resources consumption by the system on idle. This
+dotfiles usually provides me with a running system with ~250MB memory usage
+without network manager / blueman and udiskie applets and ~500MB with applets
+loaded to tray (default).
+
+![Screenshot of desktop using my dotfiles](screenshot.png "Screenshot")
 
 ## Requirements
 
@@ -33,6 +43,9 @@ as  FreeBSD and OpenBSD.
 Make sure `pipewire`, `pipewire-pulse`, `wireplumber` and `bluetoothd` run as
 user services. This can be achieved on OpenRC by `rc-update add -U <service>
 default` run for each service. For systemd these usually get added automatically.
+
+Also make sure `NetworkManager` and `sddm` (in case installed) are enabled by
+`rc-update add <service>`.
 
 #### Test WebRTC screen sharing
 
