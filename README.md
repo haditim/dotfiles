@@ -20,16 +20,21 @@ loaded to tray (default).
 ### Packages
 
 - Sway
-  - `swaync`, `swaylock`, `swayidle`, `slurp`, `grim`, `cliphist`, `pcmanfm`,
+  - `swaync`, `swaylock`, `swayidle`, `cliphist`, `pcmanfm`,
     `rofi`, `lxqt-policykit`, `lxappearance`
+- Notifications
+  - `brightnessctl`, `libnotify`, `playerctl`
 - Menu bar
-  - Waybar
+  - Waybar (default)
     - `udiskie`, `network-manager-applet`, `htop`, `noto-fonts`, `noto-fonts-emoji`
-  - or i3status
+  - or i3status (uncomment in settings to replace waybar)
 - Audio
-  - `pipewire`, `wireplumber`, `pipewire-pulse`, `pipewire-alsa`, `bluez`, `blueman`
+  - `pipewire`, `wireplumber`, `pipewire-pulse`, `pipewire-alsa`, `bluez`,
+    `blueman`, `pulseaudio-utils`
 - Screen sharing
   - `xdg-desktop-portal-wlr`, `xdg-user-dirs`
+- Screenshot
+  - `slurp`, `grim`
 - mpv
   - `intel-media-driver` for vaapi video hardware acceleration on intel
 - Terminal
@@ -52,11 +57,12 @@ Also make sure `NetworkManager` and `sddm` (in case installed) are enabled by
 Screen sharing can be tested via [WebRTC test landing page](https://mozilla.github.io/webrtc-landing/).
 
 # sway
-Install `sway swaybg swayidle swaylock` (and `pipewire pipewire-alsa
-pipewire-pulse wireplumber xdg-desktop-portal-wlr`) as well as `i3status` for a minimal setup. Settings
-are already in place. The display config can be changed in
+Install requirements mentioned above. The display config can be changed in
 `~/.config/sway/outputs` by running `swaymsg -t get_outputs` after wdisplays has
 the changes you'd want.
+
+## Key bindings
+Keybinds can be checked in `.config/sway/config.d/20-keybindings.conf`.
 
 ## Set dark theme
 To set dark theme for both GTK and Qt run the following:
