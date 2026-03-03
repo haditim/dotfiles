@@ -43,6 +43,13 @@ loaded to tray (default).
   - `sddm` (optional): if not installed, run sway with command `dbus-run-session
     sway` for screen sharing to work
 
+
+### Fonts
+
+As mentioned above `noto-fonts`, `noto-fonts-emoji` are needed for waybar. Also
+for correct Persian and Arabic font rendering, I install `ttf-dejavu` and
+`ttf-liberation` which are optional.
+
 ### Post installation steps
 
 Make sure `pipewire`, `pipewire-pulse`, `wireplumber` and `bluetoothd` run as
