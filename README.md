@@ -30,6 +30,8 @@ loaded to tray (default).
   - `pipewire`, `wireplumber`, `pipewire-pulse`, `pipewire-alsa`, `bluez`, `blueman`
 - Screen sharing
   - `xdg-desktop-portal-wlr`, `xdg-user-dirs`
+- Screen zoom
+  - [`wooz`](https://github.com/negrel/wooz)
 - mpv
   - `intel-media-driver` for vaapi video hardware acceleration on intel
 - Terminal
