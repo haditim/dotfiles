@@ -214,10 +214,11 @@
         "on-click": "pavucontrol"
     },
     "custom/weather": {
-        "exec": "bash -c 'if curl -fs \"https://wttr.in/?format=1\"; then exit 0; else exit 1; fi'",
+        "exec": "curl 'https://wttr.in/?format=1'",
+        "exec-if": "bash -c 'if curl -fs \"https://wttr.in/?format=1\"; then exit 0; else exit 1; fi'",
         "interval": 3600,
         "format": "{}",
-        "tooltip": true,
+        "tooltip": true
     },
     "custom/uptime": {
         "format": "{} 󰔟",
