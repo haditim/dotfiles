@@ -30,6 +30,8 @@
         "custom/weather",
         "pulseaudio",
         "backlight",
+        "custom/backlight",
+        "custom/contrast",
         "custom/clipboard",
         "custom/uptime",
         "clock",
@@ -147,6 +149,32 @@
         "format": "{icon}",
         "format-alt": "{percent}% {icon}",
         "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+    },
+    "custom/backlight": {
+        "exec": "ddcutil getvcp 10 | awk '{ split($9, a, \"[ ,]\"); print a[1] }'",
+        "exec-if": "sleep 1",
+        "format": "{text}% {icon}",
+        "format-alt": "External monitor: {text}% {icon}",
+        "format-icons": ["🔆"],
+        "interval": "once",
+        "tooltip": true,
+        "tooltip-format": "external backlight",
+        "on-scroll-up": "ddcutil setvcp 10 $(ddcutil getvcp 10 | awk '{ split($9, a, \"[ ,]\"); print a[1] + 10 }')",
+        "on-scroll-down": "ddcutil setvcp 10 $(ddcutil getvcp 10 | awk '{ split($9, a, \"[ ,]\"); print a[1] - 10 }')",
+        "on-click": "gddccontrol"
+    },
+    "custom/contrast": {
+        "exec": "ddcutil getvcp 12 | awk '{ split($9, a, \"[ ,]\"); print a[1] }'",
+        "exec-if": "sleep 1",
+        "format": "{text}% {icon}",
+        "format-alt": "External monitor: {text}% {icon}",
+        "format-icons": ["🌈"],
+        "interval": "once",
+        "tooltip": true,
+        "tooltip-format": "external contrast",
+        "on-scroll-up": "ddcutil setvcp 12 $(ddcutil getvcp 12 | awk '{ split($9, a, \"[ ,]\"); print a[1] + 10 }')",
+        "on-scroll-down": "ddcutil setvcp 12 $(ddcutil getvcp 12 | awk '{ split($9, a, \"[ ,]\"); print a[1] - 10 }')",
+        "on-click": "gddccontrol"
     },
     "battery": {
         "states": {
