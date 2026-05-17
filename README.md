@@ -23,10 +23,12 @@ loaded to tray (default).
   - `swaync`, `swaylock`, `swayidle`, `cliphist`, `pcmanfm`,
     `rofi`, `lxqt-policykit`, `lxappearance`
 - Notifications
-  - `brightnessctl`, `libnotify`, `playerctl`
+  - , `libnotify`, `playerctl`
 - Menu bar
   - Waybar (default)
     - `udiskie`, `network-manager-applet`, `htop`, `noto-fonts`, `noto-fonts-emoji`
+    - `brightnessctl` (internal monitor) and `ddcutil` (external monitor)
+      brighness (and contrast) control
   - or i3status (uncomment in settings to replace waybar)
 - Audio
   - `pipewire`, `wireplumber`, `pipewire-pulse`, `pipewire-alsa`, `bluez`,
@@ -119,7 +121,9 @@ gsettings set org.gnome.mutter check-alive-timeout 60000
 # Waybar
 
 Waybar uses noto sans mono font. Install `noto-fonts-emoji` package for all
-icons to show correctly.
+icons to show correctly. If you want contrast and brightness of external monitor
+to be controlled by waybar, enable `i2c` by `sudo modprobe i2c-dev` after
+`ddcutil` installation.
 
 # emacs
 
