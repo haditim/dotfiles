@@ -23,7 +23,7 @@ loaded to tray (default).
   - `swaync`, `swaylock`, `swayidle`, `cliphist`, `pcmanfm`,
     `rofi`, `lxqt-policykit`, `lxappearance`
 - Notifications
-  - , `libnotify`, `playerctl`
+  - `libnotify`, `playerctl`
 - Menu bar
   - Waybar (default)
     - `udiskie`, `network-manager-applet`, `htop`, `noto-fonts`, `noto-fonts-emoji`
@@ -46,6 +46,7 @@ loaded to tray (default).
 - Display manager
   - `sddm` (optional): if not installed, run sway with command `dbus-run-session
     sway` for screen sharing to work
+- X11 forwarding: `xorg-xauth`
 
 
 ### Fonts
@@ -67,7 +68,7 @@ Also make sure `NetworkManager` and `sddm` (in case installed) are enabled by
 
 Screen sharing can be tested via [WebRTC test landing page](https://mozilla.github.io/webrtc-landing/).
 
-# sway
+# Sway
 Install requirements mentioned above. The display config can be changed in
 `~/.config/sway/outputs` by running `swaymsg -t get_outputs` after wdisplays has
 the changes you'd want.
@@ -76,7 +77,8 @@ the changes you'd want.
 Keybinds can be checked in `.config/sway/config.d/20-keybindings.conf`.
 
 ## Set dark theme
-To set dark theme for both GTK and Qt run the following:
+If you installed `lxappearance`, it can be used for changing themes.
+To set dark theme for both GTK and Qt via terminal, run the following:
 ```shell
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 
@@ -85,13 +87,13 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 # gsettings set org.gnome.desktop.interface gtk-theme 'Breeze'
 ```
 
-# fish
+# Fish
 I currently use fish as my main shell. It is set up to support vterm inside
 emacs with starship. My aliases and functions are also included in the
 config. If you need to move your zsh history to shell, you can use
 [zsh-history-to-fish](https://pypi.org/project/zsh-history-to-fish/).
 
-## shell
+## Shell
 Default shell can be changed by `chsh -s /usr/bin/fish`.
 
 ## Starship
@@ -105,19 +107,6 @@ the following lines from the file `~/.config/fish/conf.d/main.fish`.
 starship init fish | source
 ```
 
-## Stop annoyances when using X11 over SSH (only for Gnome desktop)
-
-Delay the time for an app to actually not respond and Gnome showing
-`"Application" is not responding.`. This is very important if you run any X11
-forwarding over SSH. Taken from
-[askubuntu](https://askubuntu.com/questions/1068921/how-to-disable-the-window-not-responding-dialog). Also
-don't forget to have `xorg-x11-xauth` installed.
-
-``` shell
-# for a 60s delay
-gsettings set org.gnome.mutter check-alive-timeout 60000
-```
-
 # Waybar
 
 Waybar uses noto sans mono font. Install `noto-fonts-emoji` package for all
@@ -125,19 +114,27 @@ icons to show correctly. If you want contrast and brightness of external monitor
 to be controlled by waybar, enable `i2c` by `sudo modprobe i2c-dev` after
 `ddcutil` installation.
 
-# emacs
+# Emacs
 
 My main emacs configuration can be found in [my dotemacs
 repository](https://codeberg.org/haditim/dotemacs) which can be cloned to
 `.config/emacs`.
 
-# how to use
+# How to use
 I use something like the following to track my changes on dot files (mostly
 taken from
 [this](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
 page).
 
-## new setup
+## Checkout from codeberg/github
+
+``` sh
+git clone --bare https://codeberg.org/haditim/dotfiles.git $HOME/.dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles checkout
+```
+
+## (Personal note) new setup of a repository like this
 This repo is setup like following (for reference).
 
 ``` sh
@@ -149,12 +146,4 @@ echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 dotfiles remote add origin https://codeberg.org/haditim/dotfiles
 git push --set-upstream origin master
-```
-
-## to checkout from codeberg/github
-
-``` sh
-git clone --bare https://codeberg.org/haditim/dotfiles.git $HOME/.dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-dotfiles checkout
 ```
