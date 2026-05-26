@@ -14,7 +14,7 @@
 @define-color white #a9b1d6;
 @define-color orange #ff9e64;
 @define-color brown #8b4513;
-@define-color pink #ff1493;
+@define-color pink #dda0dd;
 
 @define-color workspaces-color @foreground;
 @define-color workspaces-focused-bg @green;
@@ -23,7 +23,7 @@
 @define-color workspaces-urgent-fg @black;
 
 @define-color mode-color @orange;
-@define-color mpd-color @magenta;
+@define-color music-color @pink;
 @define-color weather-color @mistyRose;
 @define-color playerctl-color @magenta;
 @define-color clock-color @blue;
@@ -74,19 +74,21 @@ window#waybar.solo {
     background-color: @background;
 }
 
-#mode, #mpd, #custom-weather, #custom-playerctl, #clock, #cpu,
+#mode, #custom-weather, #custom-playerctl, #clock, #cpu,
 #memory, #temperature, #battery, #network, #pulseaudio,
 #backlight, #disk, #custom-uptime, #custom-updates, #custom-quote,
-#idle_inhibitor, #tray, #language, #custom-clipboard, #custom-backlight, #custom-contrast {
+#idle_inhibitor, #tray, #language, #custom-clipboard, #custom-backlight,
+#custom-contrast, #mpris {
     padding: 0 10px;
     margin: 0;
     border-bottom: 1px solid transparent;
     background-color: transparent;
 }
-#mode:hover, #mpd:hover, #custom-weather:hover, #custom-playerctl:hover, #clock:hover, #cpu:hover,
+#mode:hover, #custom-weather:hover, #custom-playerctl:hover, #clock:hover, #cpu:hover,
 #memory:hover, #temperature:hover, #battery:hover, #network:hover, #pulseaudio:hover,
 #backlight:hover, #disk:hover, #custom-uptime:hover, #custom-updates:hover, #custom-quote,
-#idle_inhibitor, #tray, #language, #custom-clipboard, #custom-backlight:hover, #custom-contrast:hover {
+#idle_inhibitor, #tray, #language, #custom-clipboard, #custom-backlight:hover, #custom-contrast:hover,
+#mpris:hover {
     background: @background-light;
 }
 
@@ -117,15 +119,9 @@ window#waybar.solo {
     border-bottom-color: @mode-color;
 }
 
-#mpd {
-    color: @mpd-color;
-    border-bottom-color: @mpd-color;
-}
-
-#mpd.disconnected,
-#mpd.stopped {
-    color: @foreground;
-    border-bottom-color: transparent;
+#mpris {
+    color: @music-color;
+    border-bottom-color: @music-color;
 }
 
 #custom-weather {
