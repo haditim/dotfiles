@@ -23,7 +23,7 @@ loaded to tray (default).
   - `swaync`, `swaylock`, `swayidle`, `cliphist`, `pcmanfm`,
     `rofi`, `lxqt-policykit`, `lxappearance`
 - Notifications
-  - `libnotify`, `playerctl`
+  - `libnotify`
 - Menu bar
   - Waybar (default)
     - `udiskie`, `network-manager-applet`, `htop`, `noto-fonts`, `noto-fonts-emoji`
@@ -33,6 +33,8 @@ loaded to tray (default).
 - Audio
   - `pipewire`, `wireplumber`, `pipewire-pulse`, `pipewire-alsa`, `bluez`,
     `blueman`, `pulseaudio-utils`
+- Music
+  - `mpv` and `mpv-mpris` or `audacious` for music playback and waybar metadata display
 - Screen sharing
   - `xdg-desktop-portal-wlr`, `xdg-user-dirs`
 - Screen zoom
