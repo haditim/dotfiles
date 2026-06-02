@@ -40,7 +40,7 @@
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
-        "format": "{name} {icon}",
+        "format": "{icon} {name}",
         "format-icons": {
             "locked": "",
             "unlocked": ""
@@ -62,14 +62,16 @@
         "tooltip-format": "{app}: {title}"
     },
     "mpris": {
-        "format": "{dynamic} {player_icon}",
-        "format-paused": "{dynamic} {status_icon}",
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} {dynamic}",
         "player-icons": {
             "default": "🎵",
         },
         "status-icons": {
             "paused": "⏸"
         },
+        "max-length": 50,
+        "min-length": 10,
         "interval": 1,
         // "ignored-players": ["firefox"]
     },
@@ -89,8 +91,8 @@
         // }
     },
     "clock": {
-        "format": "{:%H:%M:%S} ",
-        "format-alt": "{:%Y.%m.%d %a %H:%M:%S} ",
+        "format": " {:%H:%M:%S}",
+        "format-alt": " {:%Y.%m.%d %a %H:%M:%S}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "interval": 1,
         "calendar": {
@@ -108,17 +110,17 @@
     },
     "cpu": {
         "interval": 2,
-        "format": "{load} {icon0}{icon1}{icon2}{icon3} {usage:>2}% {avg_frequency:.1f}GHz ",
+        "format": " {load} {icon0}{icon1}{icon2}{icon3} {usage:>2}% {avg_frequency:.1f}GHz",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "on-click": "foot --app-id=floating -e htop -s PERCENT_CPU"
     },
     "disk": {
         "interval": 30,
-        "format": "{specific_used:0.0f}/{specific_total:0.0f} G ({percentage_used}%) 󰋊",
+        "format": "󰋊 {specific_used:0.0f}/{specific_total:0.0f} G ({percentage_used}%)",
         "unit": "GB"
     },
     "memory": {
-        "format": "{used:0.1f}/{total:0.1f} G ({percentage}%) ",
+        "format": " {used:0.1f}/{total:0.1f} G ({percentage}%)",
         "interval": 5,
         "on-click": "foot --app-id=floating -e htop -s PERCENT_MEM"
     },
@@ -126,20 +128,20 @@
         "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 60,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
+        // "format-critical": "{icon} {temperatureC}°C",
+        "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", ""]
     },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{icon}",
-        "format-alt": "{percent}% {icon}",
+        "format-alt": "{icon} {percent}%",
         "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
     },
     "custom/backlight": {
         "exec": "ddcutil getvcp 10 | awk '{ split($9, a, \"[ ,]\"); print a[1] }'",
-        "format": "{text}% {icon}",
-        "format-alt": "External monitor: {text}% {icon}",
+        "format": "{icon} {text}%",
+        "format-alt": "External monitor: {icon} {text}%",
         "format-icons": ["🔆"],
         "interval": 5,
         "tooltip": true,
@@ -150,8 +152,8 @@
     },
     "custom/contrast": {
         "exec": "ddcutil getvcp 12 | awk '{ split($9, a, \"[ ,]\"); print a[1] }'",
-        "format": "{text}% {icon}",
-        "format-alt": "External monitor: {text}% {icon}",
+        "format": "{icon} {text}%",
+        "format-alt": "External monitor: {icon} {text}%",
         "format-icons": ["🌈"],
         "interval": 5,
         "tooltip": true,
@@ -166,8 +168,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
         "format-charging": "{capacity}% 󰂄",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
@@ -192,27 +194,27 @@
     },
     "network#lan": {
         "interface": "e*",
-        "format-ethernet": "{ifname} 󰈀",
-        "format-linked": "{ifname} (No IP) 󰈀",
-        "format-disconnected": "Disconnected 󰖪",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{ifname}: {ipaddr}",
     },
     "network#wifi": {
         "interface": "wl*",
-        "format-wifi": "{essid} ({signalStrength}%) 󰖩",
-        "format-linked": "{ifname} (No IP) 󰈀",
-        "format-disconnected": "Disconnected 󰖪",
+        "format-wifi": "󰖩 {essid} ({signalStrength}%)",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{ifname}: {ipaddr}",
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        "format-bluetooth-muted": "{icon}   {format_source}",
         "format-muted": "󰝟 {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": " {volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -233,7 +235,7 @@
         "tooltip": true
     },
     "custom/uptime": {
-        "format": "{} 󰔟",
+        "format": "󰔟 {}",
         "exec": "uptime -p | sed 's/up //; s/ days/d/; s/ hours/h/; s/ hour/h/; s/ day/d/; s/ minutes/m/; s/ minute/m/; s/,//g; s/ weeks/w/g; s/ week/w/g; s/ months/M/g; s/ month/M/g;'",
         "interval": 60
     },
